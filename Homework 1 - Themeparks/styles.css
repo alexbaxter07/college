@@ -1,2 +1,7 @@
+table{
+    border-collapse: separate;
+    border-spacing: 5px;
+    width: 50%;
+}
 th{text-align: center;}
 td{text-align: center;}
