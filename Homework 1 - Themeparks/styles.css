@@ -1,7 +1,55 @@
 table{
+    color:lightblue;
     border-collapse: separate;
     border-spacing: 5px;
     width: 50%;
 }
-th{text-align: center;}
-td{text-align: center;}
+th{
+    text-align: center;
+    font-size: 30px;
+}
+td{
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    font-size: 25px;
+}
+
+h1{
+    color:lightblue;
+    font-size: 50px;
+}
+
+p{
+    color:lightblue;
+    font-size: 25px;
+}
+
+h3{
+    color:lightblue;
+    font-size: 30px;
+}
+
+ol{
+    color:lightblue;
+    font-size: 20px;
+}
+a:link {
+    color: hotpink;
+}
+
+a:visited {
+    color: lightgreen;
+}
+
+/* mouse over link */
+a:hover {
+    color: lightgreen;
+}
+
+/* selected link */
+a:active {
+    color: palevioletred;
+}
