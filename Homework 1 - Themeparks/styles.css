@@ -1,8 +1,8 @@
 table{
-    color:lightblue;
+    color:cornflowerblue;
     border-collapse: separate;
     border-spacing: 5px;
-    width: 50%;
+    width: 100%;
 }
 th{
     text-align: center;
@@ -13,28 +13,33 @@ td{
 }
 
 body{
-    background-color: black;
-    font-size: 25px;
+    background-color: #292929;
+    font-size: 20px;
 }
 
 h1{
-    color:lightblue;
-    font-size: 50px;
+    color:cornflowerblue;
+    font-size: 45px;
 }
 
 p{
-    color:lightblue;
-    font-size: 25px;
+    color:cornflowerblue;
+    font-size: 20px;
+}
+
+ul{
+    color:cornflowerblue;
+    font-size: 20px;
 }
 
 h3{
-    color:lightblue;
-    font-size: 30px;
+    color:cornflowerblue;
+    font-size: 25px;
 }
 
 ol{
-    color:lightblue;
-    font-size: 20px;
+    color:cornflowerblue;
+    font-size: 15px;
 }
 a:link {
     color: hotpink;
