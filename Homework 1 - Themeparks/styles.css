@@ -1,20 +1,25 @@
 table{
     color:cornflowerblue;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 5px;
     width: 100%;
+    border: solid grey;
 }
 th{
     text-align: center;
     font-size: 30px;
+    border: solid grey;
 }
 td{
     text-align: center;
+    border: solid grey;;
 }
 
 body{
     background-color: #292929;
     font-size: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 h1{
@@ -61,4 +66,12 @@ a:active {
 form {
     color: cornflowerblue;
     font-size: 20px
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
