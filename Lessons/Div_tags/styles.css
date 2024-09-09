@@ -5,3 +5,15 @@ body {
 p {
     font-family: Arial,Verdana,Tahoma, sans-serif;
 }
+
+.main{
+    img {
+
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding: 10px;
+    }
+}
