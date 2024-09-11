@@ -1,6 +1,8 @@
 body {
     background-color: darkslategray;
     color: cadetblue;
+    font-family: Arial, Verdana, Tahoma, sans-serif;
+    font-size: 50px;
 }
 
 h1{
