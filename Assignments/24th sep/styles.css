@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    background-color: darkslategray;
 }
 
 #container {
@@ -14,7 +14,7 @@ body {
 }
 
 #navbar {
-    background-color: aquamarine;
+    background-color: dimgray;
 }
 
 #nav li{
