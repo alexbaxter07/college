@@ -1,0 +1,82 @@
+table{
+    color:cornflowerblue;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    width: 100%;
+    border: solid grey;
+}
+th{
+    text-align: center;
+    font-size: 30px;
+    border: solid grey;
+}
+td{
+    text-align: center;
+    border: solid grey;;
+}
+
+body{
+    background-color: #292929;
+    font-size: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+h1{
+    color:cornflowerblue;
+    font-size: 45px;
+
+    left: 0;
+    margin: 0;
+    padding: 0px;
+}
+
+p{
+    color:cornflowerblue;
+    font-size: 20px;
+}
+
+ul{
+    color:cornflowerblue;
+    font-size: 20px;
+}
+
+h3,h4{
+    color:cornflowerblue;
+    font-size: 25px;
+}
+
+ol{
+    color:cornflowerblue;
+    font-size: 15px;
+}
+a:link {
+    color: hotpink;
+}
+
+a:visited {
+    color: lightgreen;
+}
+
+/* mouse over link */
+a:hover {
+    color: lightgreen;
+}
+
+/* selected link */
+a:active {
+    color: palevioletred;
+}
+form {
+    color: cornflowerblue;
+    font-size: 20px
+}
+
+img{
+    width: 120px;
+    height: 100px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
