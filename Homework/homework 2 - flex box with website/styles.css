@@ -1,82 +1,76 @@
-table{
-    color:cornflowerblue;
-    border-collapse: collapse;
-    border-spacing: 5px;
-    width: 100%;
-    border: solid grey;
-}
-th{
-    text-align: center;
-    font-size: 30px;
-    border: solid grey;
-}
-td{
-    text-align: center;
-    border: solid grey;;
+img{
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 10px;
 }
 
-body{
-    background-color: #292929;
+#navbar {
+    background-color: #1560BD;
+    text-align: center;
     font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+    background-color: #0f52ba;
     padding-left: 150px;
     padding-right: 150px;
 }
 
-h1{
-    color:cornflowerblue;
-    font-size: 45px;
-
-    left: 0;
-    margin: 0;
-    padding: 0px;
+#nav li{
+    display: inline;
+    margin: 10px;
 }
 
-p{
-    color:cornflowerblue;
-    font-size: 20px;
+#history{
+    background-color: #0047ab;
+    color: whitesmoke;
 }
 
-ul{
-    color:cornflowerblue;
-    font-size: 20px;
-}
-
-h3,h4{
-    color:cornflowerblue;
-    font-size: 25px;
-}
-
-ol{
-    color:cornflowerblue;
-    font-size: 15px;
-}
 a:link {
-    color: hotpink;
+    color: pink;
 }
+
 
 a:visited {
     color: lightgreen;
 }
+
 
 /* mouse over link */
 a:hover {
     color: lightgreen;
 }
 
+
 /* selected link */
 a:active {
     color: palevioletred;
 }
-form {
-    color: cornflowerblue;
-    font-size: 20px
+
+table{
+    color: turquoise;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    width: 100%;
+    border: solid grey;
 }
 
-img{
-    width: 120px;
-    height: 100px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    padding: 10px;
+td{
+    text-align: center;
+    border: solid grey;;
+}
+
+#Titlebar{
+    background-color: dodgerblue;
+}
+
+#Rides{
+    color: #ee6b6e;
 }
