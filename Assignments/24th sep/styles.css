@@ -1,5 +1,10 @@
 body {
     background-color: darkslategray;
+    color: cadetblue;
+}
+
+h1{
+    color: black;
 }
 
 #container {
@@ -15,9 +20,18 @@ body {
 
 #navbar {
     background-color: dimgray;
+    padding-left: 750px;
+}
+
+fieldset{
+    border: pink;
 }
 
 #nav li{
-    display:inline;
+    display: inline;
     margin: 10px;
+}
+
+#nav li a{
+    color: hotpink;
 }
