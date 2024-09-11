@@ -1,0 +1,23 @@
+body {
+    background-color: bisque;
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+}
+
+#titlebar {
+    background-color: darkgray;
+    width:100%;
+    text-align:right;
+}
+
+#navbar {
+    background-color: aquamarine;
+}
+
+#nav li{
+    display:inline;
+    margin: 10px;
+}
