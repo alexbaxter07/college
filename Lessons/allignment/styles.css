@@ -1,0 +1,55 @@
+body {
+    background-color: #263F3F;
+    color: #6FA8AA;
+    font-family: Arial, Verdana, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+h1{
+    color: white;
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+}
+
+#titlebar {
+    background-color: #494F52;
+    width:100%;
+    text-align:right;
+}
+
+#navbar {
+    background-color: #4F5659;
+    text-align: center;
+}
+
+fieldset{
+    border: pink;
+}
+
+#nav li{
+    display: inline;
+    margin: 10px;
+}
+
+#nav li a{
+    color: #FF63B1;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+#img_content{
+    padding-left: 200px ;
+    padding-top: 50px;
+    width: 500px;
+    height: 300px;
+}
+
+#content{
+    display: flex;
+    flex-flow: row;
+}
