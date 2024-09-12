@@ -42,7 +42,12 @@ img{
     height: 100%;
 }
 
-
+#img_content{
+    padding-left: 200px ;
+    padding-top: 50px;
+    width: 500px;
+    height: 300px;
+}
 
 #content{
     display: flex;
