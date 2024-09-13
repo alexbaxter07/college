@@ -28,7 +28,24 @@
     flex-flow: row;
 }
 
-#WWW{
+#WWW {
     display: flex;
     flex-flow: row;
+}
+
+img{
+    width:200px;
+    height:200px
+}
+
+#navbar {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#nav li{
+    display: inline;
+    margin: 10px;
 }
