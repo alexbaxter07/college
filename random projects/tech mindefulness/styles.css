@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column;
     background-color: #494F52;
-    color: #ee6b6e;
+    color: beige;
 }
 
 #content{
@@ -69,7 +69,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    padding: 25px;
+    padding-right: 10px;
 }
 
 #image2muchtech {
@@ -78,7 +78,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    padding: 10px;
+    padding-right: 10px;
 }
 
 #titlebar{
@@ -89,7 +89,7 @@
 }
 
 a:link {
-    color: pink;
+    color: cornflowerblue;
 }
 
 
@@ -106,5 +106,5 @@ a:hover {
 
 /* selected link */
 a:active {
-    color: palevioletred;
+    color: dodgerblue;
 }
