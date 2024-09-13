@@ -5,5 +5,30 @@
 
 #content{
     display: flex;
+    flex-flow: column;
+}
+
+#history{
+    display: flex;
+    flex-flow: row;
+}
+
+#Alan{
+    display: flex;
+    flex-flow: row;
+}
+
+#Ada{
+    display: flex;
+    flex-flow: row;
+}
+
+#Tim{
+    display: flex;
+    flex-flow: row;
+}
+
+#WWW{
+    display: flex;
     flex-flow: row;
 }
