@@ -35,7 +35,7 @@
     flex-flow: row;
 }
 
-#content img{
+#content  img{
     width:200px;
     height:200px
 }
@@ -51,7 +51,7 @@
     display: inline;
     margin: 10px;
 }
-img{
+#image {
     width: 200px;
     height: 200px;
     position: fixed;
