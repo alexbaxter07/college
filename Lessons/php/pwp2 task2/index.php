@@ -2,23 +2,16 @@
 <html lang="en">
     <head>
         <title>Index</title>
-        <?php
-
-
-        ?>
-
-
 
     </head>
 
     <body>
 
-    <?php
-
-        echo"<p id='Steve'>Hello</p>"
-
-    ?>
-
+        <form action="welcome.php" method="POST">
+            Name: <input type="text" name="name"><br>
+            E-mail: <input type="text" name="email"><br>
+            <input type="submit">
+        </form>
 
     </body>
 </html>
