@@ -1,49 +1,58 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <title>Index</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
+    <head>
+        <title>Index</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-    <form method="post" action="">
+    <body>
 
-        <input type="text" name="num1" placeholder="Enter first number" required>
-        <input type="text" name="num2" placeholder="Enter second number" required>
-        <select name="operator" id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="/">/</option>
-            <option value="*">*</option>
-        </select>
-        <input type="submit" value="Calculate">
+        <h1>Basic Calculator</h1>
 
-    </form>
+        <form method="post" action="">
 
-    <?php
+            <input type="text" name="num1" placeholder="Enter first number" required>
+            <input type="text" name="num2" placeholder="Enter second number" required>
+            <select name="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select>
+            <input type="submit" value="Calculate">
 
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
-            $operator = $_POST['operator'];
+        </form>
 
+        <?php
 
-            if ($operator == "+") {
-                $result = $num1 + $num2;
-            } else if ($operator == "-") {
-                $result = $num1 - $num2;
-            } else if ($operator == "/") {
-                $result = $num1 / $num2;
-            } else if ($operator == "*") {
-                $result = $num1 * $num2;
+            if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                $num1 = $_POST['num1'];
+                $num2 = $_POST['num2'];
+                $operator = $_POST['operator'];
+
+                if (is_numeric($_POST["num1"]) && is_numeric($_POST["num2"])) {
+
+                    if ($operator == "+") {
+                        $result = $num1 + $num2;
+                    } else if ($operator == "-") {
+                        $result = $num1 - $num2;
+                    } else if ($operator == "/") {
+                        $result = $num1 / $num2;
+                    } else if ($operator == "*") {
+                        $result = $num1 * $num2;
+                    }
+                    echo $result;
+                } else{
+                    echo"You haven't entered numbers";
+                }
+
             }
-            echo $result;
-        }
 
+        ?>
 
+    </body>
 
-    ?>
-
-</body>
 </html>
