@@ -1,4 +1,13 @@
 body{
     background-color: #4F5659;
     color: whitesmoke;
+    font-family: Arial, Verdana, Tahoma, sans-serif;
+}
+
+#container{
+    padding: 10px;
+}
+
+form{
+    font-size: 20px;
 }
