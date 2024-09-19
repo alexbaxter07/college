@@ -11,3 +11,7 @@ body{
 #Rules p{
     padding-top: 10px;
 }
+
+#content form{
+    padding: 5px;
+}
