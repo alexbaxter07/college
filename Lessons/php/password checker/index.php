@@ -33,18 +33,21 @@
 
                         <tr>
                             <td><label for="Email">Email:</label></td>
-                            <td><input type="text" name="Email" placeholder="Enter your Email"></td>
+                            <td><input type="email" name="Email" placeholder="Enter your Email" required></td>
                         </tr>
 
                         <tr>
                             <td><label for="Pass">Password:</label></td>
-                            <td><input type="text" name="Pass" placeholder="Enter your Password"></td>
+                            <td><input type="password" name="Pass" placeholder="Enter your Password" required></td>
                         </tr>
 
                         <tr>
                             <td><label for="CPass">Confirm Password:</label></td>
-                            <td><input type="text" name="CPass" placeholder="Confirm your Password"></td>
+                            <td><input type="password" name="CPass" placeholder="Confirm your Password" required></td>
                         </tr>
+
+                        <tr><td><input type="submit" value="Submit"></td></tr>
+
                     </table>
 
                 </form>
@@ -59,6 +62,12 @@
                         <li>The password must contain a minimum of 1 number </li>
                         <li>The password must contain at least 1 special character</li>
                     </ol>
+
+                </div>
+
+                <div id="password_check">
+
+
 
                 </div>
 
