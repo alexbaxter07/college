@@ -55,6 +55,7 @@
                 <div id="Rules">
 
                     <p>An entered password must meet each of these rules:</p>
+
                     <ol>
                         <li>Must be a minimum of 8 characters in length</li>
                         <li>The password must contain a minimum of 1 capital letter </li>
@@ -69,10 +70,39 @@
 
                     <?php
 
-                        $pass = array($_POST['Pass']);
+                        $pass = $_POST['Pass'];
+                        $cpass = $_POST['CPass'];
+                        $output = "";
 
-                        foreach ($pass as $i) {
-                            echo $i . "<br>";
+                        if ($pass <> $cpass) {
+                            $output .= nl2br("Passwords do not match!\n");
+                        }
+
+                        if (preg_match("/[a-z]/", $pass) == false) {
+                            $output .= nl2br("No Lowercase letters!\n");
+                        }
+
+                        if (preg_match("/[A-Z]/", $pass) == false) {
+                            $output .= nl2br("No Capital letters!\n");
+                        }
+
+                        if (preg_match("/[0-9]/", $pass) == false) {
+                            $output .= nl2br("No Numbers letters!\n");
+                        }
+
+                        if (preg_match('/[^A-Za-z0-9]/', $pass) == false) {
+                            $output .= nl2br("No Special Characters!\n");
+                        }
+
+                        if (strlen($pass) < 8) {
+                            $output .= nl2br("Passwords must be at least 8 characters long!\n");
+                        }
+
+                        if ($output == ""){
+                            echo "Password meets requirements!";
+                        }else{
+                            echo "Please fix these issues:";
+                            echo $output;
                         }
 
                     ?>
