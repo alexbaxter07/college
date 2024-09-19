@@ -44,20 +44,18 @@
                             if (is_numeric($_POST["num1"]) && is_numeric($_POST["num2"])) {
 
                                 if ($operator == "+") {
-                                    $result = $num1 + $num2;
+                                    echo $num1 + $num2;
                                 } else if ($operator == "-") {
-                                    $result = $num1 - $num2;
+                                    echo $num1 - $num2;
                                 } else if ($operator == "*") {
-                                    $result = $num1 * $num2;
+                                    echo $num1 * $num2;
                                 }else if ($operator == "/") {
                                     if( $num1 <> 0 && $num2 <> 0 ){
-                                        $result = $num1 / $num2;
+                                        echo $num1 / $num2;
                                     }else{
                                         echo "Please enter a valid number you cannot divide by 0";
-                                        $result = "";
                                     }
                                 }
-                                echo "Your result is " . $result;
                             } else{
                                 echo"You haven't your numbers correctly please check they are integers and try again";
                             }
@@ -65,6 +63,7 @@
                         }
 
                     ?>
+                    
                 </div>
 
             </div>
