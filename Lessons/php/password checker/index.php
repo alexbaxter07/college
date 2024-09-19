@@ -67,7 +67,15 @@
 
                 <div id="password_check">
 
+                    <?php
 
+                        $pass = array($_POST['Pass']);
+
+                        foreach ($pass as $i) {
+                            echo $i . "<br>";
+                        }
+
+                    ?>
 
                 </div>
 
