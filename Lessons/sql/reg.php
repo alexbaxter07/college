@@ -9,6 +9,8 @@
     $email = $_POST['email'];
     $cpaswd = $_POST['CPassword'];
 
+    $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
+
     if($pswd <> $cpaswd ){
         header("refresh:5; url=index.html");
         echo "The passwords did not match, you will be redirected in 5 seconds.";
@@ -36,7 +38,7 @@
     }else{
         $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VAlUES(?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, 'sssss', $Usern, $pswd, $fname, $sname, $email);
+        mysqli_stmt_bind_param($stmt, 'sssss', $Usern, $hashed_pswd, $fname, $sname, $email);
         mysqli_stmt_execute($stmt);
 
         if(mysqli_stmt_error($stmt)){
