@@ -29,12 +29,6 @@
     }elseif(strlen($pswd) < 8){
         header("refresh:5; url=index.html");
         echo "Password is less than 8 characters";
-    }elseif(ctype_upper($fname(0)) == false){
-        header("refresh:5; url=index.html");
-        echo "First name does not have uppercase letter";
-    }elseif(ctype_upper($sname(0)) == false){
-        header("refresh:5; url=index.html");
-        echo "Surname does not have uppercase letter";
     }else{
         $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VAlUES(?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
