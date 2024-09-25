@@ -10,30 +10,29 @@
     $cpaswd = $_POST['CPassword'];
 
     if($pswd <> $cpaswd ){
-        echo "Passwords do not match";
-        header("location: index.html");
-        exit();
+        header("refresh:5; url=index.html");
+        echo "The passwords did not match, you will be redirected in 5 seconds.";
     }elseif(preg_match("/[a-z]/", $pswd) == false){
+        header("refresh:5; url=index.html");
         echo "There are no lowercase letters";
-        header("location: index.html");
     }elseif(preg_match("/[A-Z]/", $pswd) == false){
+        header("refresh:5; url=index.html");
         echo "There are no uppercase letters";
-        header("location: index.html");
     }elseif(preg_match("/[0-9]/", $pswd) == false) {
+        header("refresh:5; url=index.html");
         echo "There are no numbers";
-        header("location: index.html");
     }elseif(preg_match("/[^A-Za-z0-9]/", $pswd) == false) {
+        header("refresh:5; url=index.html");
         echo "There are no special characters";
-        header("location: index.html");
     }elseif(strlen($pswd) < 8){
+        header("refresh:5; url=index.html");
         echo "Password is less than 8 characters";
-        header("location: index.html");
-    }elseif(ctype_upper($fname(0))){
+    }elseif(ctype_upper($fname(0)) == false){
+        header("refresh:5; url=index.html");
         echo "First name does not have uppercase letter";
-        header("location: index.html");
-    }elseif(ctype_upper($sname(0))){
+    }elseif(ctype_upper($sname(0)) == false){
+        header("refresh:5; url=index.html");
         echo "Surname does not have uppercase letter";
-        header("location: index.html");
     }else{
         $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VAlUES(?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
