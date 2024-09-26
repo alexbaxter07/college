@@ -6,15 +6,16 @@
     $pswd = $_POST['Password'];
 
     $stmt = $conn->prepare("SELECT Password FROM mem WHERE UserName = 'Uname'");
-    $stmt->bind_param("s", $Usern);
+    $stmt->bind_param($Usern);
     $stmt->execute();
-    $stmt->store_result();
 
+    $result = $stmt ->fetch(PDO::FETCH_ASSOC);
+    $password = $result["Password"];
 
-    if ($stmt == false) {
+    if ($result) {
         header("refresh:5; url=index.html");
         echo "User not found. Please Sign Up";
-    }elseif (password_verify($pswd, $stmt)) {
+    }elseif (password_verify($pswd, $password)) {
         echo "you are now logged in";
     }else{
         header("refresh:5; url=login.html");
