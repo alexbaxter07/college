@@ -9,8 +9,6 @@
     $email = $_POST['email'];
     $cpaswd = $_POST['CPassword'];
 
-    $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-
     if($pswd <> $cpaswd ){
         header("refresh:5; url=signup.html");
         echo "The passwords did not match, you will be redirected in 5 seconds.";
@@ -29,17 +27,26 @@
     }elseif(strlen($pswd) < 8){
         header("refresh:5; url=signup.html");
         echo "Password is less than 8 characters";
-    }else{
-        $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VAlUES(?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, 'sssss', $Usern, $hashed_pswd, $fname, $sname, $email);
-        mysqli_stmt_execute($stmt);
+    }else {
 
-        if(mysqli_stmt_error($stmt)){
-            echo"Error: " . mysqli_stmt_error($stmt);
-        }else{
-            echo"Records created successfully";
+
+        try {
+
+            $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO mem(Uname, Pswd, Fname, Sname, Email)VALUES (?,?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $Usern);
+            $stmt->bindParam(2, $hashed_pswd);
+            $stmt->bindParam(3, $fname);
+            $stmt->bindParam(4, $sname);
+            $stmt->bindParam(5, $email);
+
+            $stmt->execute();
+            header("refresh:5 url=login.html");
+            echo "Successfully Registered";
+        } catch (PDOException $e) {
+            echo "error: " . $e->getMessage();
         }
     }
-
 ?>
