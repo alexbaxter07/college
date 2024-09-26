@@ -5,8 +5,9 @@
     $Usern = $_POST['Uname'];
     $pswd = $_POST['Password'];
 
-    $stmt = $conn->prepare("SELECT Password FROM mem WHERE UserName = 'Uname'");
-    $stmt->bind_param($Usern);
+    $sql = "SELECT Password FROM mem WHERE Username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1,$Usern);
     $stmt->execute();
 
     $result = $stmt ->fetch(PDO::FETCH_ASSOC);
