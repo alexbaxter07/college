@@ -33,7 +33,7 @@
         try {
 
             $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO mem(Uname, Pswd, Fname, Sname, Email)VALUES (?,?,?,?,?)";
+            $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VALUES (?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(1, $Usern);
