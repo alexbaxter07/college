@@ -11,9 +11,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $Usern);
         $stmt->execute();
-
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        $password = $result["Password"];
 
         if ($result) {
             $_SESSION["ssnlogin"] = true;
@@ -29,6 +27,7 @@
         } else{
             echo "User not found";
         }
+
     }catch(Exception $e){
         echo $e->getMessage();
     }
