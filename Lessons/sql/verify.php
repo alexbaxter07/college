@@ -3,7 +3,7 @@
     include 'db_connect.php';
 
     try {
-        session_start();
+        session_start(); // Start new or resume existing session
         $Usern = $_POST['Uname'];
         $pswd = $_POST['Password'];
 
@@ -14,6 +14,7 @@
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
+            //$_SESSION — Session variables
             $_SESSION["ssnlogin"] = true;
             $_SESSION["Uname"] = $Usern;
             $rpswd = $result["Password"];

@@ -1,3 +1,9 @@
+<?php
+
+    session_start(); //session means that variables can be used across pages
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -5,8 +11,6 @@
     <head>
 
         <?php
-
-            session_start(); //session means that variables can be used across pages
 
             if(!$_SESSION["ssnlogin"]){
                 header("refresh:5;url=login.html");
