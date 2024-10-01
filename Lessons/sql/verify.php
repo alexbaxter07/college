@@ -37,7 +37,7 @@
     echo "<head>";
 
     echo "<meta charset='UTF-8'>";
-    echo "<title>Login</title>";
+    echo "<title>Verify</title>";
     echo "<link href='styles.css' rel='stylesheet'>";
 
     echo "</head>";

@@ -33,16 +33,24 @@
         try {
 
             $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VALUES (?,?,?,?,?)";
-            $stmt = $conn->prepare($sql);
+            $query = $con->prepare("SELECT * FROM mem WHERE username =?");
+            $query->bind_param('s', $Usern);
+            $query->execute();
+            $query->bind_result();
+            $query->fetch();
+            $query->close();
 
-            $stmt->bindParam(1, $Usern);
-            $stmt->bindParam(2, $hashed_pswd);
-            $stmt->bindParam(3, $fname);
-            $stmt->bindParam(4, $sname);
-            $stmt->bindParam(5, $email);
+            $query1 = $con->prepare("UPDATE memb SET VALUES(?,?,?,?,?) WHERE username =? ");
 
-            $stmt->execute();
+            $query1->bindParam(1, $Usern);
+            $query1->bindParam(2, $hashed_pswd);
+            $query1->bindParam(3, $fname);
+            $query1->bindParam(4, $sname);
+            $query1->bindParam(5, $email);
+            
+            $query1->execute();
+            $query1->close();
+
             header("refresh:5 url=login.html");
             echo "Successfully Registered";
         } catch (PDOException $e) {
@@ -55,11 +63,11 @@
 
     echo "<head>";
 
-        echo "<meta charset='UTF-8'>";
-        echo "<title>Register</title>";
-        echo "<link href='styles.css' rel='stylesheet'>";
+    echo "<meta charset='UTF-8'>";
+    echo "<title>Update</title>";
+    echo "<link href='styles.css' rel='stylesheet'>";
 
-        echo "</head>";
+    echo "</head>";
 
     echo "</html>"
 ?>

@@ -56,7 +56,7 @@
 
     <ul>
 
-        <li><a href="update.php">YES</li>
+        <li><a href="update.html">YES</li>
         <li><a href="quit.php">NO</li>
 
     </ul>
