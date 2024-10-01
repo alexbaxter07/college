@@ -10,6 +10,8 @@
 
     <head>
 
+        <link href="styles.css" rel="stylesheet">
+
         <?php
 
             if(!$_SESSION["ssnlogin"]){
