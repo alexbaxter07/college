@@ -52,6 +52,15 @@
 
         ?>
 
+    <p>Would you like to update your informaition</p>
+
+    <ul>
+
+        <li><a href="update.php">YES</li>
+        <li><a href="quit.php">NO</li>
+
+    </ul>
+
     </body>
 
 </html>
