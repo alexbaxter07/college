@@ -52,7 +52,7 @@
 
         ?>
 
-    <p>Would you like to update your informaition</p>
+    <p>Would you like to update your information</p>
 
     <ul>
 
