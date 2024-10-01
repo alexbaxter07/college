@@ -14,7 +14,15 @@
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $sql = "SELECT uname FROM mem WHERE uname = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1,$usnm);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
     if ($result) {
+
         //$_SESSION — Session variables
         $_SESSION["ssnlogin"] = true;
         $_SESSION["Uname"] = $Usern;
@@ -26,9 +34,6 @@
             header("refresh:5; url=login.html");
             echo "Password is incorrect";
         }
-
-    } else{
-        echo "User not found";
     }
 
     echo "<!DOCTYPE html>";

@@ -29,25 +29,42 @@
         echo "Password is less than 8 characters";
     }else {
 
+        $sql = "SELECT uname FROM mem WHERE uname = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $usnm);
+        $stmt->execute();
 
-        try {
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VALUES (?,?,?,?,?)";
-            $stmt = $conn->prepare($sql);
+        if ($result) {
 
-            $stmt->bindParam(1, $Usern);
-            $stmt->bindParam(2, $hashed_pswd);
-            $stmt->bindParam(3, $fname);
-            $stmt->bindParam(4, $sname);
-            $stmt->bindParam(5, $email);
+            header("refresh:5; url=signup.html");
+            echo "User Exists, try another name";
 
-            $stmt->execute();
-            header("refresh:5 url=login.html");
-            echo "Successfully Registered";
-        } catch (PDOException $e) {
-            echo "error: " . $e->getMessage();
+        } else {
+
+            try {
+
+                $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VALUES (?,?,?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $Usern);
+                $stmt->bindParam(2, $hashed_pswd);
+                $stmt->bindParam(3, $fname);
+                $stmt->bindParam(4, $sname);
+                $stmt->bindParam(5, $email);
+
+                $stmt->execute();
+                header("refresh:5 url=login.html");
+                echo "Successfully Registered";
+
+            } catch (PDOException $e) {
+                echo "error: " . $e->getMessage();
+            }
+
         }
+
     }
 
     echo "<!DOCTYPE html>";
