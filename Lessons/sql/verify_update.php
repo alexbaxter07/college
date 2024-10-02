@@ -5,11 +5,13 @@
     include "db_connect.php";
 
 
-    $pswd = $_POST['Password'];
-    $fname = $_POST['Fname'];
-    $sname = $_POST['Sname'];
-    $email = $_POST['Email'];
-    $cpaswd = $_POST['CPassword'];
+    $pswd = $_POST['password'];
+    $fname = $_POST['fname'];
+    $sname = $_POST['sname'];
+    $email = $_POST['email'];
+    $cpaswd = $_POST['cpassword'];
+    
+    $userid = $_SESSION['UserId'];
 
     if($pswd <> $cpaswd ){
         header("refresh:5; url=Update.html");
@@ -34,13 +36,7 @@
         try {
 
             $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-           /* $query = $con->prepare("SELECT * FROM mem WHERE username =?");
-            $query->bind_param('s', $Usern);
-            $query->execute();
-            $query->bind_result();
-            $query->fetch();
-            $query->close();
-*/
+
             $query1 = $conn->prepare("UPDATE mem SET Username = ?, Password =?, Fname = ?, Sname = ?, Email = ? WHERE username =? ");
 
             $query1->bindParam(1, $_SESSION["Uname"]);
@@ -51,9 +47,21 @@
             $query1->bindParam(6, $_SESSION["Uname"]);
             $query1->execute();
 
+            $act = "upd";
+            $logtime = time();
 
-            header("refresh:5 url=login.html");
+            $sql = "INSERT INTO activity (UserId, Activity, Date) VALUES(?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $userid);
+            $stmt->bindParam(2, $act);
+            $stmt->bindParam(3, $logtime);
+
+            $stmt->execute();
+
+            header("refresh:5 url=profile.html");
             echo "Successfully Updated";
+
         } catch (PDOException $e) {
             echo "error: " . $e->getMessage();
         }
@@ -72,4 +80,5 @@
     echo "</head>";
 
     echo "</html>"
+
 ?>

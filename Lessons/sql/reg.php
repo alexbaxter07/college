@@ -2,12 +2,13 @@
 
     include "db_connect.php";
 
-    $Usern = $_POST['Uname'];
-    $pswd = $_POST['Password'];
-    $fname = $_POST['Fname'];
-    $sname = $_POST['Sname'];
+    $usern = $_POST['uname'];
+    $pswd = $_POST['password'];
+    $fname = $_POST['fname'];
+    $sname = $_POST['sname'];
     $email = $_POST['email'];
-    $cpaswd = $_POST['CPassword'];
+    $cpaswd = $_POST['cpassword'];
+    $sdate = date("Y-m-d");
 
     if($pswd <> $cpaswd ){
         header("refresh:5; url=signup.html");
@@ -29,9 +30,9 @@
         echo "Password is less than 8 characters";
     }else {
 
-        $sql = "SELECT uname FROM mem WHERE uname = ?";
+        $sql = "SELECT Username FROM mem WHERE Username = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(1, $usnm);
+        $stmt->bindParam(1, $usern);
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -46,14 +47,15 @@
             try {
 
                 $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email)VALUES (?,?,?,?,?)";
+                $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email, Signup)VALUES (?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
 
-                $stmt->bindParam(1, $Usern);
+                $stmt->bindParam(1, $usern);
                 $stmt->bindParam(2, $hashed_pswd);
                 $stmt->bindParam(3, $fname);
                 $stmt->bindParam(4, $sname);
                 $stmt->bindParam(5, $email);
+                $stmt->bindParam(6, $sdate);
 
                 $stmt->execute();
                 header("refresh:5 url=login.html");
