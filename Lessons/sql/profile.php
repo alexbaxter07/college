@@ -65,27 +65,37 @@
         <h3>Key dates:</h3>
 
         <?php
+            $userid= $_SESSION["UserID"];
 
-        // date they signed up to system
+            // date they signed up to system
 
-        $sql = "SELECT Signup from mem where Username = ? ";
+            $sql = "SELECT Signup from mem where Username = ? ";
 
-        $stmt = $conn->prepare($sql);
-        $stmt -> bindParam(1,$usnm);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt = $conn->prepare($sql);
+            $stmt -> bindParam(1,$usnm);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $date = $result['Signup'];
+            $date = $result['Signup'];
 
-        echo "<p>Date of signup</p>";
+            echo "<p>Date of signup</p>";
 
-        echo date('d M Y', strtotime($date));
+            echo date('g:i A, l - d M Y', strtotime($date));
 
-        //date and time of last login
+            //date and time of last login
 
-        // last activity
+            $sql = "SELECT Date, Activity FROM activity where UserID = ?";
 
-        //number of times they have done each activity
+            $stmt = $conn->prepare($sql);
+            $stmt -> bindParam(1,$userid);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            echo"$result";
+
+            // last activity
+
+            //number of times they have done each activity
 
         ?>
 
