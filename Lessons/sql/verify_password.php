@@ -3,7 +3,7 @@
     session_start();
     
     include "db_connect.php";
-    
+
     $opswd = $_POST['opassword'];
     $npswd = $_POST['npassword'];
     $cpswd = $_POST['cpassword'];
@@ -17,40 +17,58 @@
 
     $stmt -> execute();
 
-    $spswd = $stmt -> fetch();
-    
-    if(password_verify($opswd,$spswd)){
-        
-        if($npswd <> $cpswd ){
-            header("refresh:5; url=upswd.html");
-            echo "The passwords did not match, you will be redirected in 5 seconds.";
-        }elseif(preg_match("/[a-z]/", $npswd) == false){
-            header("refresh:5; url=upswd.html");
-            echo "There are no lowercase letters";
-        }elseif(preg_match("/[A-Z]/", $npswd) == false){
-            header("refresh:5; url=upswd.html");
-            echo "There are no uppercase letters";
-        }elseif(preg_match("/[0-9]/", $npswd) == false) {
-            header("refresh:5; url=upswd.html");
-            echo "There are no numbers";
-        }elseif(preg_match("/[^A-Za-z0-9]/", $npswd) == false) {
-            header("refresh:5; url=upswd.html");
-            echo "There are no special characters";
-        }elseif(strlen($npswd) < 8) {
-            header("refresh:5; url=upswd.html");
-            echo "Password is less than 8 characters";
-        }else{
-            $hashed_pswd = password_hash($npswd, PASSWORD_DEFAULT);
-            $sql = "UPDATE mem SET Password = ? WHERE UserID = ? ";
-            $query1 = $conn->prepare($sql);
+    $result= $stmt -> fetch(PDO::FETCH_ASSOC);
 
-            $query1->bindParam(1, $hashed_pswd);
-            $query1->bindParam(2, $userid);
-            $query1->execute();
-            echo "password updated";
+    if($result) {
+
+        $spswd = $result['Password'];
+
+        if (password_verify($opswd, $spswd)) {
+
+            if ($npswd <> $cpswd) {
+                header("refresh:5; url=upswd.html");
+                echo "The passwords did not match, you will be redirected in 5 seconds.";
+            } elseif (preg_match("/[a-z]/", $npswd) == false) {
+                header("refresh:5; url=upswd.html");
+                echo "There are no lowercase letters";
+            } elseif (preg_match("/[A-Z]/", $npswd) == false) {
+                header("refresh:5; url=upswd.html");
+                echo "There are no uppercase letters";
+            } elseif (preg_match("/[0-9]/", $npswd) == false) {
+                header("refresh:5; url=upswd.html");
+                echo "There are no numbers";
+            } elseif (preg_match("/[^A-Za-z0-9]/", $npswd) == false) {
+                header("refresh:5; url=upswd.html");
+                echo "There are no special characters";
+            } elseif (strlen($npswd) < 8) {
+                header("refresh:5; url=upswd.html");
+                echo "Password is less than 8 characters";
+            } else {
+                $hashed_pswd = password_hash($npswd, PASSWORD_DEFAULT);
+                $sql = "UPDATE mem SET Password = ? WHERE UserID = ? ";
+                $query1 = $conn->prepare($sql);
+
+                $query1->bindParam(1, $hashed_pswd);
+                $query1->bindParam(2, $userid);
+                $query1->execute();
+                echo "password updated";
+            }
+        } else {
+            echo "Old Password does not match";
         }
-    }else{
-        echo "Old Password does not match";
     }
+
+    echo "<!DOCTYPE html>";
+    echo "<html lang='en'>";
+
+    echo "<head>";
+
+    echo "<meta charset='UTF-8'>";
+    echo "<title>Password Verify</title>";
+    echo "<link href='styles.css' rel='stylesheet'>";
+
+    echo "</head>";
+
+    echo "</html>"
 
 ?>
