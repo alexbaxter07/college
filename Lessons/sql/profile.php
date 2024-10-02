@@ -62,6 +62,14 @@
 
     </ul>
 
+    // date they signed up to system
+
+    //date and time of last login
+
+    // last activity 
+
+    //number of times they have done each activity
+
     </body>
 
 </html>
