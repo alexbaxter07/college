@@ -77,9 +77,9 @@
 
         $date = $result['Signup'];
 
-        echo date('d M ', strtotime($date));
+        echo "<p>Date of signup</p>";
+
         echo date('d M Y', strtotime($date));
-        echo date('g:i A, l - d M Y', strtotime($date));
 
         //date and time of last login
 
