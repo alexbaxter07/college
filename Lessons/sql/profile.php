@@ -68,7 +68,7 @@
 
         // date they signed up to system
 
-        $sql = "SELECT Signup from mems where Username = ? ";
+        $sql = "SELECT Signup from mem where Username = ? ";
 
         $stmt = $conn->prepare($sql);
         $stmt -> bindParam(1,$usnm);
