@@ -39,6 +39,12 @@
 
                 $stmt->execute();
 
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
+
                 header("refresh:5; url=upswd.html");
                 echo "The passwords did not match, you will be redirected in 5 seconds.";
 
@@ -55,6 +61,12 @@
                 $stmt->bindParam(3, $logtime);
 
                 $stmt->execute();
+
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
 
                 header("refresh:5; url=upswd.html");
                 echo "There are no lowercase letters";
@@ -73,6 +85,12 @@
 
                 $stmt->execute();
 
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
+
                 header("refresh:5; url=upswd.html");
                 echo "There are no uppercase letters";
 
@@ -89,6 +107,12 @@
                 $stmt->bindParam(3, $logtime);
 
                 $stmt->execute();
+
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
 
                 header("refresh:5; url=upswd.html");
                 echo "There are no numbers";
@@ -107,6 +131,12 @@
 
                 $stmt->execute();
 
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
+
                 header("refresh:5; url=upswd.html");
                 echo "There are no special characters";
 
@@ -123,6 +153,12 @@
                 $stmt->bindParam(3, $logtime);
 
                 $stmt->execute();
+
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
 
                 header("refresh:5; url=upswd.html");
                 echo "Password is less than 8 characters";
@@ -150,7 +186,13 @@
 
                 $stmt->execute();
 
-                header("refresh:5; url=profile.php");
+                // remove all session variables
+                session_unset();
+
+                // destroy the session
+                session_destroy();
+
+                header("refresh:5; url=login.php");
                 echo "password updated";
 
             }
@@ -169,8 +211,14 @@
 
             $stmt->execute();
 
-            header("refresh:5; url=signup.html");
-            echo "Old Password does not match";
+            // remove all session variables
+            session_unset();
+
+            // destroy the session
+            session_destroy();
+
+            header("refresh:5; url=login.html");
+            echo "Old Password does not match! Please login again.";
         }
     }
 
