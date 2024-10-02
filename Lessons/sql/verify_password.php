@@ -7,11 +7,19 @@
     $opswd = $_POST['opassword'];
     $npswd = $_POST['npassword'];
     $cpswd = $_POST['cpassword'];
-    $spswd = $_SESSION['Password'];
     $userid = $_SESSION['UserID'];
+
+    $sql = "SELECT Password FROM mem WHERE UserID = ?";
+
+    $stmt = $conn -> prepare($sql);
+
+    $stmt -> bindParam(1, $userid);
+
+    $stmt -> execute();
+
+    $spswd = $stmt -> fetch();
     
-    if(password_verify($opswd,$spswd )){
-        echo "passwords matched";
+    if(password_verify($opswd,$spswd)){
         
         if($npswd <> $cpswd ){
             header("refresh:5; url=upswd.html");
