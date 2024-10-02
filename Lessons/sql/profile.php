@@ -52,11 +52,12 @@
 
         ?>
 
-    <p>Would you like to update your information</p>
+    <p>Would you like to update your information?</p>
 
     <ul>
 
-        <li><a href="Update.html">YES</li>
+        <li><a href="Update.html">Update core details</li>
+        <li><a href="Upswd.html">Update Password</li>
         <li><a href="quit.php">NO</li>
 
     </ul>

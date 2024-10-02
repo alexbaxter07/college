@@ -5,32 +5,29 @@
     session_set_cookie_params(3600);
     session_start(); // Start new or resume existing session
 
-    $Usern = $_POST['uname'];
+    $usern = $_POST['uname'];
     $pswd = $_POST['password'];
 
-    $sql = "SELECT Password FROM mem WHERE Username = ?";
+    $sql = "SELECT * FROM mem WHERE Username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $usern);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "SELECT Username FROM mem WHERE Username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(1,$usnm);
-    $stmt->execute();
-
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($result) {
 
         //$_SESSION — Session variables
         $_SESSION["ssnlogin"] = true;
         $_SESSION["Uname"] = $usern;
+        $_SESSION["UserID"] = $result["UserID"];
         $rpswd = $result["Password"];
         if (password_verify($pswd, $rpswd)) {
+
             header("refresh:5; url=profile.php");
             echo "you are now logged in! Heading to your profile";
         } else {
+
             header("refresh:5; url=login.html");
             echo "Password is incorrect";
         }
