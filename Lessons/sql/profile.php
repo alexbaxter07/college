@@ -52,23 +52,42 @@
 
         ?>
 
-    <p>Would you like to update your information?</p>
+        <p>Would you like to update your information?</p>
 
-    <ul>
+        <ul>
 
-        <li><a href="Update.html">Update core details</li>
-        <li><a href="upswd.html">Update Password</li>
-        <li><a href="quit.php">NO</li>
+            <li><a href="Update.html">Update core details</li>
+            <li><a href="upswd.html">Update Password</li>
+            <li><a href="quit.php">NO</li>
 
-    </ul>
+        </ul>
 
-    // date they signed up to system
+        <h3>Key dates:</h3>
 
-    //date and time of last login
+        <?php
 
-    // last activity 
+        // date they signed up to system
 
-    //number of times they have done each activity
+        $sql = "SELECT Signup from mems where Username = ? ";
+
+        $stmt = $conn->prepare($sql);
+        $stmt -> bindParam(1,$usnm);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $date = $result['Signup'];
+
+        echo date('d M ', strtotime($date));
+        echo date('d M Y', strtotime($date));
+        echo date('g:i A, l - d M Y', strtotime($date));
+
+        //date and time of last login
+
+        // last activity
+
+        //number of times they have done each activity
+
+        ?>
 
     </body>
 
