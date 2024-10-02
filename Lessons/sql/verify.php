@@ -23,6 +23,18 @@
         $rpswd = $result["Password"];
         if (password_verify($pswd, $rpswd)) {
 
+            $act = "log";
+            $logtime = time();
+
+            $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $_SESSION["UserID"]);
+            $stmt->bindParam(2, $act);
+            $stmt->bindParam(3, $logtime);
+
+            $stmt->execute();
+
             header("refresh:5; url=profile.php");
             echo "you are now logged in! Heading to your profile";
         } else {

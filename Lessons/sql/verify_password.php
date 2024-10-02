@@ -26,34 +26,150 @@
         if (password_verify($opswd, $spswd)) {
 
             if ($npswd <> $cpswd) {
+
+                $act = "apc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
                 header("refresh:5; url=upswd.html");
                 echo "The passwords did not match, you will be redirected in 5 seconds.";
+
             } elseif (preg_match("/[a-z]/", $npswd) == false) {
+
+                $act = "apc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
                 header("refresh:5; url=upswd.html");
                 echo "There are no lowercase letters";
+
             } elseif (preg_match("/[A-Z]/", $npswd) == false) {
+
+                $act = "apc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
                 header("refresh:5; url=upswd.html");
                 echo "There are no uppercase letters";
+
             } elseif (preg_match("/[0-9]/", $npswd) == false) {
+
+                $act = "apc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
                 header("refresh:5; url=upswd.html");
                 echo "There are no numbers";
+
             } elseif (preg_match("/[^A-Za-z0-9]/", $npswd) == false) {
+
+                $act = "apc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
                 header("refresh:5; url=upswd.html");
                 echo "There are no special characters";
+
             } elseif (strlen($npswd) < 8) {
+
+                $act = "apc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
                 header("refresh:5; url=upswd.html");
                 echo "Password is less than 8 characters";
+
             } else {
+
                 $hashed_pswd = password_hash($npswd, PASSWORD_DEFAULT);
+
                 $sql = "UPDATE mem SET Password = ? WHERE UserID = ? ";
                 $query1 = $conn->prepare($sql);
 
                 $query1->bindParam(1, $hashed_pswd);
                 $query1->bindParam(2, $userid);
                 $query1->execute();
+
+                $act = "spc";
+                $logtime = time();
+
+                $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindParam(1, $_SESSION["UserID"]);
+                $stmt->bindParam(2, $act);
+                $stmt->bindParam(3, $logtime);
+
+                $stmt->execute();
+
+                header("refresh:5; url=profile.php");
                 echo "password updated";
+
             }
+
         } else {
+
+            $act = "apc";
+            $logtime = time();
+
+            $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $_SESSION["UserID"]);
+            $stmt->bindParam(2, $act);
+            $stmt->bindParam(3, $logtime);
+
+            $stmt->execute();
+
+            header("refresh:5; url=signup.html");
             echo "Old Password does not match";
         }
     }

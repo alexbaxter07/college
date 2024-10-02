@@ -4,17 +4,14 @@
 
     include "db_connect.php";
 
-    $pswd = $_POST['password'];
     $fname = $_POST['fname'];
     $sname = $_POST['sname'];
     $email = $_POST['email'];
-    $cpaswd = $_POST['cpassword'];
 
     $userid = $_SESSION['UserID'];
 
     try {
 
-        $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
         $sql = "UPDATE mem SET Username = ?, Fname = ?, Sname = ?, Email = ? WHERE UserID =? ";
         $query1 = $conn->prepare($sql);
 
@@ -37,7 +34,7 @@
 
         $stmt->execute();
 
-        header("refresh:5 url=profile.php");
+        header("refresh:1 url=profile.php");
         echo "Successfully Updated";
 
     } catch (PDOException $e) {
