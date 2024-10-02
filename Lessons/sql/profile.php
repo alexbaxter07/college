@@ -91,7 +91,11 @@
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            echo"$result";
+            $date = $result['Date'];
+
+            echo "<p>last login</p>";
+
+            echo date('d m y', strtotime($date));
 
             // last activity
 
