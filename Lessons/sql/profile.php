@@ -30,7 +30,7 @@
 
         <?php
 
-            echo "Welcome, ".$usnm;
+            echo "<h1>Welcome, ".$usnm."</h4>";
 
         ?>
 
@@ -52,7 +52,7 @@
 
         ?>
 
-        <p>Would you like to update your information?</p>
+        <h3>Would you like to update your information?</h3>
 
         <ul>
 
@@ -77,7 +77,7 @@
 
             $date = $result['Signup'];
 
-            echo "<p>Date of signup</p>";
+            echo "<h4>Date of signup</h4>";
 
             echo date('g:i A, l - d M Y', strtotime($date));
 
@@ -96,7 +96,7 @@
 
             $time = $result['Date'];
 
-            echo "<p>Time</p>";
+            echo "<h4>Time</h4>";
 
             echo date('g:i A, l- d m y', $time);
 
@@ -109,17 +109,19 @@
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            echo "<p> Last Activity</p>";
+            echo "<h4> Last Activity</h4>";
 
             echo $result['Activity'];
 
             //number of times they have done each activity
 
-            echo"<p>Activity log</p>";
+            echo"<h4>Activity log</h4>";
 
             $actions = array("log", "spc", "apc");
 
             foreach($actions as $action){
+
+                //The COUNT() function returns the number of rows that matches a specified criterion. If specific column is needed remove * and replace it with column name
 
                 $sql = "SELECT COUNT(*) As count from activity WHERE UserID = ? AND activity = ?";
 
@@ -128,6 +130,9 @@
                 $stmt -> bindParam(2,$action);
                 $stmt->execute();
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                // changes action name to be meaningful to user
+
                 $act="";
                     if($action =="log"){
                         $act="Login";
