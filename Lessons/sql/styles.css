@@ -29,3 +29,11 @@ a:hover {
 a:active {
     color: palevioletred;
 }
+
+table{
+    padding:5px;
+}
+
+table tr{
+    padding:5px;
+}

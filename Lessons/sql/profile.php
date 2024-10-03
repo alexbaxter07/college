@@ -163,6 +163,14 @@
 
             ?>
 
+            <h3>Would you like to acess your activity log</h3>
+
+            <ul>
+
+                <li><a href="active_log.php ">yes</li>
+
+            </ul>
+
         </div>
 
     </body>
