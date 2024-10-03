@@ -58,14 +58,13 @@
 
             <li><a href="Update.html">Update core details</li>
             <li><a href="upswd.html">Update Password</li>
-            <li><a href="quit.php">NO</li>
+            <li><a href="quit.php">NO</a></li>
 
         </ul>
 
         <h3>Key dates:</h3>
 
         <?php
-            $userid= $_SESSION["UserID"];
 
             // date they signed up to system
 
@@ -84,22 +83,64 @@
 
             //date and time of last login
 
-            $sql = "SELECT Date, Activity FROM activity where UserID = ?";
+            $act = 'log';
+            $uid = $_SESSION['UserID'];
+
+            $sql = "SELECT Date from activity WHERE UserID = ? AND Activity = ? ORDER BY Date DESC LIMIT 1 OFFSET 1";
 
             $stmt = $conn->prepare($sql);
-            $stmt -> bindParam(1,$userid);
+            $stmt -> bindParam(1,$uid);
+            $stmt -> bindParam(2,$act);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $date = $result['Date'];
+            $time = $result['Date'];
 
-            echo "<p>last login</p>";
+            echo "<p>Time</p>";
 
-            echo date('d m y', strtotime($date));
+            echo date('g:i A, l- d m y', $time);
 
             // last activity
 
+            $sql = "SELECT Activity from activity WHERE UserID = ? ORDER BY Date DESC LIMIT 1 OFFSET 1";
+
+            $stmt = $conn->prepare($sql);
+            $stmt -> bindParam(1,$uid);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            echo "<p> Last Activity</p>";
+
+            echo $result['Activity'];
+
             //number of times they have done each activity
+
+            echo"<p>Activity log</p>";
+
+            $actions = array("log", "spc", "apc");
+
+            foreach($actions as $action){
+
+                $sql = "SELECT COUNT(*) As count from activity WHERE UserID = ? AND activity = ?";
+
+                $stmt = $conn->prepare($sql);
+                $stmt -> bindParam(1,$uid);
+                $stmt -> bindParam(2,$action);
+                $stmt->execute();
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $act="";
+                    if($action =="log"){
+                        $act="Login";
+                    }elseif ($action =="spc"){
+                        $act="Successful Password Change";
+                    }else{
+                        $act="Unsuccessful Password Change";
+                    }
+
+                echo "The action: ".$act." has been done ".$result['count']." times"."<br>";
+
+            }
+
 
         ?>
 
