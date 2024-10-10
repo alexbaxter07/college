@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.17" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.17" pages="3">
   <diagram name="password check" id="KVi_2mQVmErIWG6Ddh9i">
     <mxGraphModel dx="1434" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#99CCFF" math="0" shadow="0">
       <root>
@@ -201,6 +201,37 @@
         </mxCell>
         <mxCell id="YlX_Aha-fQKsf8Kk60vw-8" value="stop" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="2ti6nZITkP4i-4kqUOef-1">
           <mxGeometry x="359" y="485" width="120" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Profile" id="_g8adeSNPieGodLGPkab">
+    <mxGraphModel dx="1434" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#99CCFF" math="0" shadow="0">
+      <root>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-0" />
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-1" parent="MH0WF0bPyfxmLMOCAN0U-0" />
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;" edge="1" parent="MH0WF0bPyfxmLMOCAN0U-1" source="MH0WF0bPyfxmLMOCAN0U-3" target="MH0WF0bPyfxmLMOCAN0U-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-3" value="start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="MH0WF0bPyfxmLMOCAN0U-1">
+          <mxGeometry x="359" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-4" value="Profile" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=27;" vertex="1" parent="MH0WF0bPyfxmLMOCAN0U-1">
+          <mxGeometry x="100" y="15" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;" edge="1" parent="MH0WF0bPyfxmLMOCAN0U-1" source="MH0WF0bPyfxmLMOCAN0U-6" target="MH0WF0bPyfxmLMOCAN0U-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-6" value="Start session" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="MH0WF0bPyfxmLMOCAN0U-1">
+          <mxGeometry x="359" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-8" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="MH0WF0bPyfxmLMOCAN0U-1">
+          <mxGeometry x="360" y="190" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="MH0WF0bPyfxmLMOCAN0U-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.617;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#dae8fc;strokeColor=#000000;" edge="1" parent="MH0WF0bPyfxmLMOCAN0U-1" source="MH0WF0bPyfxmLMOCAN0U-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="604.04" y="290" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
