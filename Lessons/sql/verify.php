@@ -21,6 +21,7 @@
         $_SESSION["Uname"] = $usern;
         $_SESSION["UserID"] = $result["UserID"];
         $rpswd = $result["Password"];
+        
         if (password_verify($pswd, $rpswd)) {
 
             $act = "log";
