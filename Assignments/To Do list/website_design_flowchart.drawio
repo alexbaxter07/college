@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17" pages="4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17" pages="5">
   <diagram name="password check" id="KVi_2mQVmErIWG6Ddh9i">
     <mxGraphModel dx="1434" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#99CCFF" math="0" shadow="0">
       <root>
@@ -450,6 +450,20 @@
         </mxCell>
         <mxCell id="Dq4UEbj41441Wku2MiTU-31" value="no" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="iB8osoWcuFe3ipbjhpIw-1">
           <mxGeometry x="670" y="898" width="40" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Register" id="fBHd6-k1UxvuDWt-utRv">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#99CCFF" math="0" shadow="0">
+      <root>
+        <mxCell id="MAb0Y_N3icSbHKtBcaH_-0" />
+        <mxCell id="MAb0Y_N3icSbHKtBcaH_-1" parent="MAb0Y_N3icSbHKtBcaH_-0" />
+        <mxCell id="MAb0Y_N3icSbHKtBcaH_-3" value="start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="MAb0Y_N3icSbHKtBcaH_-1">
+          <mxGeometry x="359" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MAb0Y_N3icSbHKtBcaH_-4" value="Register" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=27;" vertex="1" parent="MAb0Y_N3icSbHKtBcaH_-1">
+          <mxGeometry x="90" y="15" width="120" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
