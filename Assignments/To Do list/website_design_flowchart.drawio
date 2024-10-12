@@ -1106,7 +1106,7 @@
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1" source="YRkcXdcECK9PuHrTwfVZ-0" target="YRkcXdcECK9PuHrTwfVZ-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-0" value="if password verify old password, saved password" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+        <mxCell id="YRkcXdcECK9PuHrTwfVZ-0" value="does old password match saved password" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry x="253.5" y="780" width="99" height="110" as="geometry" />
         </mxCell>
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1" source="YRkcXdcECK9PuHrTwfVZ-1">
@@ -1114,7 +1114,7 @@
             <mxPoint x="460" y="985" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-1" value="if newpassword &amp;lt;&amp;gt; confirm password" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+        <mxCell id="YRkcXdcECK9PuHrTwfVZ-1" value="is newpassword &amp;lt;&amp;gt; confirm password" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry x="253.5" y="930" width="99" height="110" as="geometry" />
         </mxCell>
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1" source="YRkcXdcECK9PuHrTwfVZ-3" target="YRkcXdcECK9PuHrTwfVZ-5">
@@ -1166,7 +1166,7 @@
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-16" value="old password does not match please login again" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry x="64" y="1385" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-18" value="if new password&amp;nbsp; has no lowercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+        <mxCell id="YRkcXdcECK9PuHrTwfVZ-18" value="does new password&amp;nbsp; have lowercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry x="460" y="918.75" width="120" height="132.5" as="geometry" />
         </mxCell>
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
@@ -1178,7 +1178,7 @@
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1" source="YRkcXdcECK9PuHrTwfVZ-21" target="YRkcXdcECK9PuHrTwfVZ-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-21" value="if new password&amp;nbsp; has no lowercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+        <mxCell id="YRkcXdcECK9PuHrTwfVZ-21" value="does new password&amp;nbsp; have lowercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry x="687" y="918.75" width="120" height="132.5" as="geometry" />
         </mxCell>
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1" source="YRkcXdcECK9PuHrTwfVZ-23">
@@ -1186,20 +1186,20 @@
             <mxPoint x="1066.5" y="985" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-23" value="if newpassword &amp;lt;&amp;gt; confirm password" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+        <mxCell id="YRkcXdcECK9PuHrTwfVZ-23" value="does new password have uppercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry x="860" y="930" width="99" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-24" value="if new password&amp;nbsp; has no lowercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
-          <mxGeometry x="1066.5" y="918.75" width="120" height="132.5" as="geometry" />
         </mxCell>
         <mxCell id="YRkcXdcECK9PuHrTwfVZ-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1186.5" y="985" as="sourcePoint" />
-            <mxPoint x="1293.5" y="985" as="targetPoint" />
+            <mxPoint x="1170" y="985" as="sourcePoint" />
+            <mxPoint x="1277" y="985" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YRkcXdcECK9PuHrTwfVZ-26" value="if new password&amp;nbsp; has no lowercase letters" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
-          <mxGeometry x="1293.5" y="918.75" width="120" height="132.5" as="geometry" />
+        <mxCell id="YRkcXdcECK9PuHrTwfVZ-26" value="does new password have special characters&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+          <mxGeometry x="1277" y="918.75" width="120" height="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="tOzsoQPiYIs_HtZVGgST-1" value="does new password have numbers&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" vertex="1" parent="C3oTDtUzSkQFr0_E5QP_-1">
+          <mxGeometry x="1070" y="937.5" width="100" height="95" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
