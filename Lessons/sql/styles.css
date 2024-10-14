@@ -16,13 +16,14 @@ a:link {
     color: hotpink;
 }
 
+/*visited link*/
 a:visited {
     color: lightgreen;
 }
 
 /* mouse over link */
 a:hover {
-    color: lightgreen;
+    color: lightpink;
 }
 
 /* selected link */
