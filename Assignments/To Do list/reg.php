@@ -1,11 +1,12 @@
 <?php
+
     include "db_connect.php";
 
-    $usern = $_POST['Username'];
-    $pswd = $_POST['Password'];
-    $fname = $_POST['Firstname'];
-    $sname = $_POST['Lastname'];
-    $email = $_POST['Email'];
+    $usern = $_POST['uname'];
+    $pswd = $_POST['password'];
+    $fname = $_POST['fname'];
+    $sname = $_POST['sname'];
+    $email = $_POST['email'];
     $cpaswd = $_POST['cpassword'];
     $sdate = date("Y-m-d");
 
@@ -29,7 +30,7 @@
         echo "Password is less than 8 characters";
     }else {
 
-        $sql = "SELECT Username FROM mem WHERE Username = ?";
+        $sql = "SELECT Username FROM Users WHERE Username = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1, $usern);
         $stmt->execute();
@@ -46,7 +47,7 @@
             try {
 
                 $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO mem(Username, Password, Fname, Sname, Email, register)VALUES (?,?,?,?,?,?)";
+                $sql = "INSERT INTO Users(Username, Password, Firstname, Lastname, Email, Date)VALUES (?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
 
                 $stmt->bindParam(1, $usern);
