@@ -1,8 +1,15 @@
+head{
+    background-color: #757575;
+    color: whitesmoke;
+}
+
 #container{
     display: flex;
     flex-flow: column;
     background-color: #757575;
     color: whitesmoke;
+    padding: 10px;
+    font-family: Arial, Verdana, Tahoma, sans-serif;
 }
 
 #titlebar{
