@@ -8,7 +8,7 @@
     $usern = $_POST['uname'];
     $pswd = $_POST['password'];
 
-    $sql = "SELECT * FROM Users WHERE Username = ?";
+    $sql = "SELECT * FROM mem WHERE Username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $usern);
     $stmt->execute();
@@ -27,7 +27,7 @@
             $act = "log";
             $logtime = time();
 
-            $sql = "INSERT INTO Audit (Userid, Action, Date) VALUES(?,?,?)";
+            $sql = "INSERT INTO Activity (UserID, Activity, Date) VALUES(?,?,?)";
             $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(1, $_SESSION["Userid"]);
