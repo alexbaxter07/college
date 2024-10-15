@@ -8,7 +8,7 @@
     $usern = $_POST['uname'];
     $pswd = $_POST['password'];
 
-    $sql = "SELECT * FROM mem WHERE Username = ?";
+    $sql = "SELECT * FROM Users WHERE Username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $usern);
     $stmt->execute();
@@ -18,8 +18,8 @@
 
         //$_SESSION — Session variables
         $_SESSION["ssnlogin"] = true;
-        $_SESSION["Uname"] = $usern;
-        $_SESSION["UserID"] = $result["UserID"];
+        $_SESSION["Username"] = $usern;
+        $_SESSION["Userid"] = $result["UserID"];
         $rpswd = $result["Password"];
 
         if (password_verify($pswd, $rpswd)) {
@@ -27,10 +27,10 @@
             $act = "log";
             $logtime = time();
 
-            $sql = "INSERT INTO activity (UserID, Activity, Date) VALUES(?,?,?)";
+            $sql = "INSERT INTO Audit (Userid, Action, Date) VALUES(?,?,?)";
             $stmt = $conn->prepare($sql);
 
-            $stmt->bindParam(1, $_SESSION["UserID"]);
+            $stmt->bindParam(1, $_SESSION["Userid"]);
             $stmt->bindParam(2, $act);
             $stmt->bindParam(3, $logtime);
 
