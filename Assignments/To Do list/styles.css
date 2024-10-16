@@ -1,6 +1,11 @@
-head{
+body{
     background-color: #757575;
     color: whitesmoke;
+}
+
+#loggy {
+    background-color: #263F3F;
+    font-family: Arial, Verdana, Tahoma, sans-serif;
 }
 
 #container{
