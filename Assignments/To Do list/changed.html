@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Change Details</title>
-</head>
-<body>
 
-</body>
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Update Details</title>
+        <link href="styles.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <h2>Update Information</h2>
+
+            <form action="verify_updated.php" method="post">
+
+                <table>
+
+                    <tr>
+                        <td><label for="fname">First Name: </label></td>
+                        <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="sname">Surname: </label></td>
+                        <td><input type="text" id="sname" name="sname" placeholder="Enter your surname" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="email">Email: </label> </td>
+                        <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+                    </tr>
+
+                    <tr><td><input type="submit" value="Update"></td></tr>
+
+                </table>
+
+            </form>
+
+        </div>
+
+    </body>
+
 </html>
