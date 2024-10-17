@@ -8,14 +8,14 @@
     $sname = $_POST['sname'];
     $email = $_POST['email'];
 
-    $userid = $_SESSION['UserID'];
+    $userid = $_SESSION['Userid'];
 
     try {
 
         $sql = "UPDATE Users SET Username = ?, Firstname = ?, Lastname = ?, Email = ? WHERE UserID =? ";
         $query1 = $conn->prepare($sql);
     
-        $query1->bindParam(1, $_SESSION["Uname"]);
+        $query1->bindParam(1, $_SESSION["Username"]);
         $query1->bindParam(2, $fname);
         $query1->bindParam(3, $sname);
         $query1->bindParam(4, $email);
@@ -23,7 +23,7 @@
         $query1->execute();
 
         $act = "upd";
-        $logtime = time();
+        $logtime = date("Y-m-d");
         $info = "Updated core details";
 
         $sql = "INSERT INTO Audit (Userid, Action, Informaiton, Date) VALUES(?,?,?,?)";
