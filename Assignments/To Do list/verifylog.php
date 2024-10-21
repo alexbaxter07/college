@@ -38,7 +38,7 @@
 
             $stmt->execute();
 
-            header("refresh:1; url=profile.html");
+            header("refresh:1; url=profile.php");
             echo "you are now logged in! Heading to your profile";
         } else {
 
