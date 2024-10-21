@@ -30,9 +30,26 @@
 
         <div id="container">
 
+            <div id="titlebar">
+                <h1>To-Do</h1>
+            </div>
+
+            <div id = "navbar">
+
+                <ul id="nav">
+
+                    <li><a href="changed.html">Update core details</a></li>
+                    <li><a href="changep.html">Update Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="activity_log.php">Activity Log</a></li>
+
+                </ul>
+
+            </div>
+
             <?php
 
-            echo "<h1>Welcome, ".$usnm."</h4>";
+                echo "<h1>Welcome, ".$usnm."</h4>";
 
             ?>
 
@@ -53,16 +70,6 @@
             }
 
             ?>
-
-            <h3>Would you like to update your information?</h3>
-
-            <ul>
-
-                <li><a href="changed.html">Update core details</li>
-                <li><a href="changep.html">Update Password</li>
-                <li><a href="logout.html">NO</a></li>
-
-            </ul>
 
             <h3>Key dates:</h3>
 

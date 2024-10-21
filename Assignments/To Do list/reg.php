@@ -58,7 +58,7 @@
                 $stmt->bindParam(6, $sdate);
 
                 $stmt->execute();
-                header("refresh:5 url=login.html");
+                header("refresh:1 url=login.html");
                 echo "Successfully Registered";
 
             } catch (PDOException $e) {
