@@ -98,7 +98,7 @@
 
             $time = $result['Date'];
 
-            /*echo "<h4>Date</h4>";
+            echo "<h4>Date</h4>";
 
             echo $time;
 
@@ -110,13 +110,12 @@
             $stmt -> bindParam(1,$uid);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            */
 
             echo "<h4> Last Activity</h4>";
 
             // changes action name to be meaningful to user
 
-            $action = $result['Activity'];
+            $action = $result['Action'];
 
             $act="";
             if($action =="log"){
@@ -163,17 +162,3 @@
             }
 
             ?>
-
-            <h3>Would you like to access your activity log</h3>
-
-            <ul>
-
-                <li><a href="activity_log.php ">yes</li>
-
-            </ul>
-
-        </div>
-
-    </body>
-
-</html>
