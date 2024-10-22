@@ -40,7 +40,7 @@
             echo "you are now logged in! Heading to your profile";
         } else {
 
-            header("refresh:5; url=login.html");
+            header("refresh:5; url=../log.html");
             echo "Password is incorrect";
         }
     }

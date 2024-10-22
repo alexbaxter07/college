@@ -28,7 +28,7 @@
 
                     <li><a href="../change%20deatails/changed.html">Update core details</a></li>
                     <li><a href="../change%20deatails/changep.html">Update Password</a></li>
-                    <li><a href="../login/logout.html">Logout</a></li>
+                    <li><a href="../log/logout.html">Logout</a></li>
                     <li><a href="activity_log.php">Activity Log</a></li>
 
                 </ul>

@@ -192,7 +192,7 @@
                 // destroy the session
                 session_destroy();
 
-                header("refresh:5; url=login.php");
+                header("refresh:5; url=../log.php");
                 echo "password updated";
 
             }
@@ -217,8 +217,8 @@
             // destroy the session
             session_destroy();
 
-            header("refresh:5; url=login.html");
-            echo "Old Password does not match! Please login again.";
+            header("refresh:5; url=../log.html");
+            echo "Old Password does not match! Please log again.";
         }
     }
 

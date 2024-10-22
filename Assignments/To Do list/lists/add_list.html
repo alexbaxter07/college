@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Add List</title>
+        <link href="../styles.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div id = "container">
+
+            <div id="titlebar">
+
+                <h1>To-Do</h1>
+
+            </div>
+
+            <div id="navbar">
+
+                <ul id="nav">
+
+                    <li><a href="../profile/profile.php">Profile</a></li>
+                    <li><a href="add_list.html">Add list</a></li>
+                    <li><a href="del_list.html">Delete list</a></li>
+                    <li><a href="../log/logout.html">Logout</a></li>
+
+                </ul>
+
+            </div>
+
+            <div id="content">
+
+                <h2>List Name</h2>
+
+                <form action="add_list.php" method="post">
+
+                    <table id = "addl">
+
+                        <tr>
+                            <td><label for="lname" >List Name: </label></td>
+                            <td><input type="text" id="lname" name="lname" placeholder="Enter a List name" required></td>
+                        </tr>
+
+                        <tr><td><input type="submit" value="add"></td></tr>
+
+                    </table>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </body>
+
 </html>

@@ -42,7 +42,7 @@
             echo "you are now logged in! Heading to your profile";
         } else {
 
-            header("refresh:1; url=login.html");
+            header("refresh:1; url=../log.html");
             echo "Password is incorrect";
         }
     }
@@ -54,7 +54,7 @@
 
     echo "<meta charset='UTF-8'>";
     echo "<title>Verify Login</title>";
-    echo "<link href='../styles.css' rel='stylesheet'>";
+    echo "<link href='styles.css' rel='stylesheet'>";
 
     echo "</head>";
 

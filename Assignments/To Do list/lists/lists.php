@@ -33,7 +33,7 @@
                     <li><a href="../profile/profile.php">Profile</a></li>
                     <li><a href="lists.php">Lists</a></li>
                     <li><a href="edit_lists.html">Edit Lists</a></li>
-                    <li><a href="../login/logout.html">Logout</a></li>
+                    <li><a href="../log/logout.html">Logout</a></li>
 
                 </ul>
 

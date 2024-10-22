@@ -15,8 +15,8 @@
         <?php
 
         if(!$_SESSION["ssnlogin"]){
-            header("refresh:1;url=login.html");
-            echo"You are not currently logged in, redirecting to login page";
+            header("refresh:1;url=../log.html");
+            echo"You are not currently logged in, redirecting to log page";
         }else{
             $usnm = $_SESSION['Username'];
             echo "<title>". $usnm. "'s profile page</title>";
@@ -47,7 +47,7 @@
                 <li><a href="../change%20deatails/changep.html">Update Password</a></li>
                 <li><a href="activity_log.php">Activity Log</a></li>
                 <li><a href="../lists/lists.php">Lists</a></li>
-                <li><a href="../login/logout.html">Logout</a></li>
+                <li><a href="../log/logout.html">Logout</a></li>
 
             </ul>
 
@@ -92,7 +92,7 @@
 
             echo date('g:i A, l - d M Y', strtotime($date));
 
-            //date and time of last login
+            //date and time of last log
 
             $act = 'log';
             $uid = $_SESSION['Userid'];

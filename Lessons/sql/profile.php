@@ -15,8 +15,8 @@
         <?php
 
             if(!$_SESSION["ssnlogin"]){
-                header("refresh:5;url=login.html");
-                echo"You are not currently logged in, redirecting to login page";
+                header("refresh:5;url=../log.html");
+                echo"You are not currently logged in, redirecting to log page";
             }else{
                 $usnm = $_SESSION['Uname'];
                 echo "<title>". $usnm. "'s profile page</title>";
@@ -83,7 +83,7 @@
 
                 echo date('g:i A, l - d M Y', strtotime($date));
 
-                //date and time of last login
+                //date and time of last log
 
                 $act = 'log';
                 $uid = $_SESSION['UserID'];
