@@ -14,7 +14,7 @@
 
         <meta charset="UTF-8">
         <title>Lists</title>
-        <link href="styles.css" rel="stylesheet">
+        <link href="../styles.css" rel="stylesheet">
 
     </head>
 
@@ -30,10 +30,10 @@
 
                 <ul id="nav">
 
-                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="../profile/profile.php">Profile</a></li>
                     <li><a href="lists.php">Lists</a></li>
                     <li><a href="edit_lists.html">Edit Lists</a></li>
-                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="../login/logout.html">Logout</a></li>
 
                 </ul>
 
@@ -63,6 +63,8 @@
             ?>
 
             <ul id="edit_list">
+
+                <h3>Would you like to edit lists?</h3>
 
                 <li><a href="edit_lists.html">Yes</a></li>
                 <li><a href="lists.php">No</a></li>

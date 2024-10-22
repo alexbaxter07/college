@@ -245,7 +245,7 @@
 
     echo "<meta charset='UTF-8'>";
     echo "<title>Password Verify</title>";
-    echo "<link href='styles.css' rel='stylesheet'>";
+    echo "<link href='../styles.css' rel='stylesheet'>";
 
     echo "</head>";
 
