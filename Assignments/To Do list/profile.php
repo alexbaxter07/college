@@ -42,6 +42,7 @@
                     <li><a href="changep.html">Update Password</a></li>
                     <li><a href="logout.html">Logout</a></li>
                     <li><a href="activity_log.php">Activity Log</a></li>
+                    <li><a href="lists.html">Lists</a> </li>
 
                 </ul>
 
