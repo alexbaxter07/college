@@ -40,18 +40,25 @@
 
             </div>
 
-            <h3>Here are your lists: </h3>
-
             <?
 
-            $sql = "SELECT Listname, Date FROM lists where Userid = ?";
+            $sql = "SELECT Listname, Date FROM Lists WHERE Userid = ?";
             $stmt = $conn->prepare($sql);
             $stmt ->bindParam(1,$_SESSION['Userid']);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            foreach($result as $row=>$value){
-                echo $result."<br>";
+            if(!$result){
+
+                echo"No lists found";
+
+            }else{
+
+                echo"<h3>Here are your lists: </h3>";
+
+                foreach ($result as $row => $value) {
+                    echo $result . "<br>";
+                }
             }
 
             ?>
