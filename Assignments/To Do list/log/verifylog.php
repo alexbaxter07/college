@@ -1,6 +1,6 @@
 <?php
 
-    include 'db_connect.php';
+    include '../db_connect.php';
 
     session_set_cookie_params(3600);
     session_start(); // Start new or resume existing session
@@ -54,7 +54,7 @@
 
     echo "<meta charset='UTF-8'>";
     echo "<title>Verify Login</title>";
-    echo "<link href='styles.css' rel='stylesheet'>";
+    echo "<link href='../styles.css' rel='stylesheet'>";
 
     echo "</head>";
 

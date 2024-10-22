@@ -2,7 +2,7 @@
 
     session_start();
 
-
+    include "../db_connect.php";
 
     echo "<!DOCTYPE html>";
     echo "<html lang='en'>";

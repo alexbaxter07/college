@@ -2,7 +2,7 @@
 
     session_start();
 
-    include "db_connect.php";
+    include "../db_connect.php";
 
     $fname = $_POST['fname'];
     $sname = $_POST['sname'];

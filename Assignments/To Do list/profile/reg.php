@@ -1,6 +1,6 @@
 <?php
 
-    include "db_connect.php";
+    include "../db_connect.php";
 
     $usern = $_POST['uname'];
     $pswd = $_POST['password'];

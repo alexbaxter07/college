@@ -2,7 +2,7 @@
 
     session_start();
 
-    include "db_connect.php";
+    include "../db_connect.php";
 
     $opswd = $_POST['opassword'];
     $npswd = $_POST['npassword'];

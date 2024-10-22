@@ -59,7 +59,7 @@
 
             <?php
 
-            include "db_connect.php";
+            include "../db_connect.php";
 
             $sql = "SELECT Username, Firstname, Lastname, Email FROM Users WHERE Username = ?  ";
             $stmt = $conn->prepare($sql);
