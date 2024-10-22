@@ -30,10 +30,9 @@
 
                 <ul id="nav">
 
-                    <li><a href="changed.html">Update core details</a></li>
-                    <li><a href="changep.html">Update Password</a></li>
-                    <li><a href="activity_log.php">Activity Log</a></li>
-                    <li><a href="lists.php">Lists</a> </li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="lists.php">Lists</a></li>
+                    <li><a href="edit_lists.html">Edit Lists</a></li>
                     <li><a href="logout.html">Logout</a></li>
 
                 </ul>
@@ -62,6 +61,13 @@
             }
 
             ?>
+
+            <ul id="edit_list">
+
+                <li><a href="edit_lists.html">Yes</a></li>
+                <li><a href="lists.php">No</a></li>
+
+            </ul>
 
         </div>
 
