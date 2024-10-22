@@ -54,3 +54,8 @@ a:hover {
 a:active {
     color: palevioletred;
 }
+
+#active_table{
+    width: 28%;
+    border: whitesmoke;
+}

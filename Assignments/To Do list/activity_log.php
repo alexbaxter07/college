@@ -48,9 +48,9 @@
     echo "<div id = container>";
 
     $actions = array("log", "spc", "apc");
-    $uid = $_SESSION['UserID'];
+    $uid = $_SESSION['Userid'];
 
-    echo"<table>";
+    echo"<table id='active_table'>";
 
     echo"<th>Activity</th>";
     echo"<th>Number of times</th>";
@@ -59,7 +59,7 @@
 
         //The COUNT() function returns the number of rows that matches a specified criterion. If specific column is needed remove * and replace it with column name
 
-        $sql = "SELECT COUNT(*) AS count from activity WHERE UserID = ? AND activity = ?";
+        $sql = "SELECT COUNT(*) AS count from Audit WHERE Userid = ? AND action = ?";
 
         $stmt = $conn->prepare($sql);
         $stmt -> bindParam(1,$uid);
