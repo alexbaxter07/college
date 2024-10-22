@@ -15,7 +15,7 @@
         <?php
 
         if(!$_SESSION["ssnlogin"]){
-            header("refresh:5;url=login.html");
+            header("refresh:1;url=login.html");
             echo"You are not currently logged in, redirecting to login page";
         }else{
             $usnm = $_SESSION['Username'];
@@ -30,29 +30,30 @@
 
         <div id="container">
 
-            <div id="titlebar">
-                <h1>To-Do</h1>
-            </div>
-
-            <div id = "navbar">
-
-                <ul id="nav">
-
-                    <li><a href="changed.html">Update core details</a></li>
-                    <li><a href="changep.html">Update Password</a></li>
-                    <li><a href="logout.html">Logout</a></li>
-                    <li><a href="activity_log.php">Activity Log</a></li>
-                    <li><a href="lists.html">Lists</a> </li>
-
-                </ul>
-
-            </div>
+        <div id="titlebar">
 
             <?php
 
                 echo "<h1>Welcome, ".$usnm."</h4>";
 
             ?>
+        </div>
+
+        <div id="navbar">
+
+            <ul id="nav">
+
+                <li><a href="changed.html">Update core details</a></li>
+                <li><a href="changep.html">Update Password</a></li>
+                <li><a href="activity_log.php">Activity Log</a></li>
+                <li><a href="lists.php">Lists</a></li>
+                <li><a href="logout.html">Logout</a></li>
+
+            </ul>
+
+        </div>
+
+        <div id="content">
 
             <h3>Here is your information:</h3>
 
@@ -170,3 +171,10 @@
             }
 
             ?>
+        </div>
+
+        </div>
+
+    </body>
+
+</html>
