@@ -39,13 +39,13 @@
 
             </div>
 
-            <?
+            <?php
 
             $sql = "SELECT Listname, Date FROM Lists WHERE Userid = ?";
             $stmt = $conn->prepare($sql);
             $stmt ->bindParam(1,$_SESSION['Userid']);
             $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if(!$result){
 
@@ -53,11 +53,10 @@
 
             }else{
 
-                echo"<h3>Here are your lists: </h3>";
-
-                foreach ($result as $row => $value) {
-                    echo $result . "<br>";
+                foreach($result as $row){
+                    echo "List Name: ".$row['Listname']." Date: ".$row['Date']. "<br>";
                 }
+
             }
 
             ?>
