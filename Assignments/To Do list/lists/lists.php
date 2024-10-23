@@ -61,15 +61,6 @@
 
             ?>
 
-            <ul id="edit_list">
-
-                <h3>Would you like to edit lists?</h3>
-
-                <li><a href="edit_lists.html">Yes</a></li>
-                <li><a href="lists.php">No</a></li>
-
-            </ul>
-
         </div>
 
     </body>

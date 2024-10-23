@@ -21,6 +21,7 @@
         $_SESSION["Username"] = $usern;
         $_SESSION["Userid"] = $result["Userid"];
         $rpswd = $result["Password"];
+        $_SESSION['Listid'] = -1;
 
         if (password_verify($pswd, $rpswd)) {
 

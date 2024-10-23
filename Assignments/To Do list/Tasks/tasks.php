@@ -31,8 +31,8 @@
             <ul id="nav">
 
                 <li><a href="../profile/profile.php">Profile</a></li>
-                <li><a href="add_list.html">Add list</a></li>
-                <li><a href="del_list.html">Delete list</a></li>
+                <li><a href="../lists/add_list.html">Add list</a></li>
+                <li><a href="../lists/del_list.html">Delete list</a></li>
                 <li><a href="../log/logout.html">Logout</a></li>
 
             </ul>
@@ -43,7 +43,7 @@
 
             <h2>List Name</h2>
 
-            <form action="add_task.php" method="post">
+            <form action="tasks.php" method="post">
 
                 <table id = "addt">
 
@@ -71,11 +71,15 @@
 
 <?php
 
-    $lid = $_SESSION['listid'];
-    $ddate = $_POST['duedate'];
+
+    $ddate = $_POST['Duedate'];
     $date = date("Y-m-d H:i:s");
 
-
+    $sql = "Select Listid from Lists WHERE Userid = ?";
+    $stmt = $conn -> prepare($sql);
+    $stmt ->bindParam(1,$_SESSION['userid']);
+    $stmt ->execute();
+    $lid = $stmt->fetchAll();
 
     $sql = "Select Task, Date, Duedate, Completed from Tasks WHERE Listid = ?";
     $stmt = $conn->prepare($sql);
