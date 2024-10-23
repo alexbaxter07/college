@@ -4,6 +4,20 @@
 
     include "../db_connect.php";
 
+    $uid = $_SESSION['Userid'];
+    $lname = $_POST['lname'];
+
+
+    try {
+
+       echo "Unfinished";
+
+    }catch (PDOException $e) {
+        echo "error: " . $e->getMessage();
+    }
+
+    include "../db_connect.php";
+
     echo "<!DOCTYPE html>";
     echo "<html lang='en'>";
 

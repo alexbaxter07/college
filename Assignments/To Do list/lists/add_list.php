@@ -18,7 +18,7 @@
         $stmt->bindParam(3, $date);
 
         $stmt->execute();
-        header("refresh:1 url=add_list.html");
+        header("refresh:1 url=lists.php");
         echo "Successfully Added";
 
     } catch (PDOException $e) {
