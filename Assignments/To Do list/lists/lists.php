@@ -41,7 +41,7 @@
 
             <?php
 
-            $sql = "SELECT Listname, Date FROM Lists WHERE Userid = ?";
+            $sql = "SELECT Listid, Listname, Date FROM Lists WHERE Userid = ?";
             $stmt = $conn->prepare($sql);
             $stmt ->bindParam(1,$_SESSION['Userid']);
             $stmt->execute();
@@ -53,9 +53,24 @@
 
             }else{
 
+                echo "<h3>Select List  </h3>";
+
+                echo "<table id='edit_list'>";
+
                 foreach($result as $row){
-                    echo "List Name: ".$row['Listname']." Date: ".$row['Date']. "<br>";
+
+                    echo "<form action='../Tasks/sel_task.php' method='post' name ='form_".$row['Listid']."'>";
+                    echo "<input type='hidden' name='Listid' value='".$row['Listid']."'>";
+                    echo "<tr>";
+                    echo "<td>List Name: ".$row['Listname']."</td>";
+                    echo "<td>Date: ".$row['Date']."</td>";
+                    echo "<td><input type='submit' name='edit' value='Edit'></td>";
+                    echo "<td><input type='submit' name='delete' value='Delete'></td>";
+                    echo "</tr>";
+                    echo "</form>";
                 }
+
+                echo "</table><br>";
 
             }
 
