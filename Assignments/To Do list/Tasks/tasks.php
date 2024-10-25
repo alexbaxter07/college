@@ -41,62 +41,56 @@
 
         <div id="content">
 
-            <h2>List Name</h2>
+            <h2>Lists</h2>
 
-            <form action="tasks.php" method="post">
+            <?php
 
-                <table id = "addt">
 
-                    <tr>
-                        <td><label for="tname" >Task Name: </label></td>
-                        <td><input type="text" id="tname" name="tname" placeholder="Enter a Task name" required></td>
-                    </tr>
+                $ddate = $_POST['Duedate'];
+                $date = date("Y-m-d H:i:s");
 
-                    <tr>
-                        <td><label for="duedate" >Task Name: </label></td>
-                        <td><input type="date" id="duedate" name="duedate" required></td>
-                    </tr>
+                $sql = "Select Listid from Lists WHERE Userid = ?";
+                $stmt = $conn -> prepare($sql);
+                $stmt ->bindParam(1,$_SESSION['Userid']);
+                $stmt ->execute();
+                $lid = $stmt->fetchAll();
 
-                    <tr><td><input type="submit" value="add"></td></tr>
+                $sql = "Select Task, Date, Duedate, Completed from Tasks WHERE Listid = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt -> bindParam(1, $lid);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
 
-                </table>
+                if(!$result){
 
-            </form>
+                        echo"No lists found";
+
+                    }else{
+                            echo "<h3>Select List </h3>";
+
+                            echo "<table id='edit_list'>";
+
+                            foreach($result as $row){
+
+                                echo "<form action='../Tasks/sel_task.php' method='post' name ='form_".$row['Listid']."'>";
+                                echo "<input type='hidden' name='Listid' value='".$row['Listid']."'>";
+                                echo "<tr>";
+                                echo "<td>List Name: ".$row['Listname']."</td>";
+                                echo "<td>Date: ".$row['Date']."</td>";
+                                echo "<td><input type='submit' name='edit' value='Edit'></td>";
+                                echo "<td><input type='submit' name='delete' value='Delete'></td>";
+                                echo "</tr>";
+                                echo "</form>";
+                            }
+
+                            echo "</table><br>";
+
+                    }
+
+            ?>
 
         </div>
 
     </body>
 
 </html>
-
-<?php
-
-
-    $ddate = $_POST['Duedate'];
-    $date = date("Y-m-d H:i:s");
-
-    $sql = "Select Listid from Lists WHERE Userid = ?";
-    $stmt = $conn -> prepare($sql);
-    $stmt ->bindParam(1,$_SESSION['userid']);
-    $stmt ->execute();
-    $lid = $stmt->fetchAll();
-
-    $sql = "Select Task, Date, Duedate, Completed from Tasks WHERE Listid = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt -> bindParam(1, $lid);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-
-    if(!$result){
-
-                echo"No lists found";
-
-            }else{
-
-                foreach($result as $row){
-                    echo "Task Name: ".$row['Task']." Due Date: ".$row['Duedate']. ".<br>";
-                }
-
-            }
-
-?>
