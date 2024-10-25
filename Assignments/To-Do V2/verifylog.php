@@ -39,11 +39,11 @@
 
             $stmt->execute();
 
-            header("refresh:1; url=../profile/profile.php");
+            header("refresh:1; url=profile.php");
             echo "you are now logged in! Heading to your profile";
         } else {
 
-            header("refresh:1; url=../log.html");
+            header("refresh:1; url=log.html");
             echo "Password is incorrect";
         }
     }
