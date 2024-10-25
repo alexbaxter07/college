@@ -2,7 +2,7 @@
 
     session_start();
 
-    include "../db_connect.php";
+    include "db_connect.php";
 
     $opswd = $_POST['opassword'];
     $npswd = $_POST['npassword'];
@@ -47,7 +47,7 @@
                 // destroy the session
                 session_destroy();
 
-                header("refresh:5; url=changep.html");
+                header("refresh:1; url=changep.html");
                 echo "The passwords did not match, you will be redirected in 5 seconds.";
 
             } elseif (preg_match("/[a-z]/", $npswd) == false) {
@@ -245,7 +245,7 @@
 
     echo "<meta charset='UTF-8'>";
     echo "<title>Password Verify</title>";
-    echo "<link href='../styles.css' rel='stylesheet'>";
+    echo "<link href='styles.css' rel='stylesheet'>";
 
     echo "</head>";
 

@@ -2,7 +2,7 @@
 
     session_start();
 
-    include "../db_connect.php";
+    include "db_connect.php";
 
     $fname = $_POST['fname'];
     $sname = $_POST['sname'];
@@ -50,7 +50,7 @@
 
     echo "<meta charset='UTF-8'>";
     echo "<title>Update Details</title>";
-    echo "<link href='../styles.css' rel='stylesheet'>";
+    echo "<link href='styles.css' rel='stylesheet'>";
 
     echo "</head>";
 

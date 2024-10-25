@@ -11,7 +11,7 @@
 
         <meta charset='UTF-8'>
         <title>Activity log</title>
-        <link href='../styles.css' rel='stylesheet'>
+        <link href='styles.css' rel='stylesheet'>
 
     </head>
 
@@ -26,9 +26,9 @@
 
                 <ul id="nav">
 
-                    <li><a href="../change%20deatails/changed.html">Update core details</a></li>
-                    <li><a href="../change%20deatails/changep.html">Update Password</a></li>
-                    <li><a href="../log/logout.html">Logout</a></li>
+                    <li><a href="changed.html">Update core details</a></li>
+                    <li><a href="changep.html">Update Password</a></li>
+                    <li><a href="logout.html">Logout</a></li>
                     <li><a href="activity_log.php">Activity Log</a></li>
 
                 </ul>
@@ -38,10 +38,10 @@
         </div>
     </body>
 
-</>
+</html>
 
 <?php
-    include "../db_connect.php";
+    include "db_connect.php";
 
     echo "<body>";
 
