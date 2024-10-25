@@ -3,8 +3,11 @@
 
     <head>
 
+        <!-- Meta information about the character encoding and the title of the page -->
         <meta charset="UTF-8">
         <title>Update Details</title>
+
+        <!-- Link to external CSS file for styling -->
         <link href="styles.css" rel="stylesheet">
 
     </head>
@@ -13,43 +16,53 @@
 
         <div id="container">
 
+            <!-- Navigation bar section -->
             <div id="navbar">
 
                 <ul id="nav">
 
-                    <li><a href="profile.php">Profile</a> </li>
+                    <!-- List of navigation links to different sections of the user profile -->
+                    <li><a href="profile.php">Profile</a></li>
                     <li><a href="changed.html">Update core details</a></li>
                     <li><a href="changep.html">Update Password</a></li>
                     <li><a href="logout.html">Logout</a></li>
                     <li><a href="activity_log.php">Activity Log</a></li>
-                    <li><a href="lists.php">Lists</a> </li>
+                    <li><a href="lists.php">Lists</a></li>
 
                 </ul>
 
             </div>
 
+            <!-- Main heading of the page -->
             <h2>Update Information</h2>
 
+            <!-- Form to collect updated user details -->
             <form action="verify_updated.php" method="post">
+                <!-- The form will send data to verify_updated.php using POST method -->
 
                 <table>
-
+                    <!-- First name input field -->
                     <tr>
                         <td><label for="fname">First Name: </label></td>
                         <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" required></td>
                     </tr>
 
+                    <!-- Surname input field -->
                     <tr>
                         <td><label for="sname">Surname: </label></td>
                         <td><input type="text" id="sname" name="sname" placeholder="Enter your surname" required></td>
                     </tr>
 
+                    <!-- Email input field -->
                     <tr>
-                        <td><label for="email">Email: </label> </td>
+                        <td><label for="email">Email: </label></td>
                         <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
                     </tr>
 
-                    <tr><td><input type="submit" value="Update"></td></tr>
+                    <!-- Submit button to send the form data -->
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Update"></td>
+                    </tr>
 
                 </table>
 
