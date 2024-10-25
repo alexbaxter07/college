@@ -4,16 +4,16 @@
 
     include "db_connect.php";
 
-    if (!isset($_POST['delete'])) {
+    if (isset($_POST['delete'])) {
 
-        $_SESSION['Listid'] = $_POST['lid'];
+        $_SESSION['Listid'] = $_POST['Listid'];
 
         header("Location: del_list.php");
 
     }else{
 
         if (isset($_POST['edit'])){
-            $_SESSION['lid'] = $_POST['lid'];
+            $_SESSION['Listid'] = $_POST['Listid'];
         }
 
         echo"<!DOCTYPE html>";
@@ -22,7 +22,7 @@
 
             echo"<head>";
 
-                echo "<link rel='stylesheet' href='/StyleSheet/StyleSheet.css' />";
+                echo "<link rel='stylesheet' href='styles.css' />";
                 echo"<title>Edit Lists</title>";
 
             echo"</head>";
@@ -39,7 +39,7 @@
 
                     echo"<div id='navbar'>";
 
-                        echo"<ul>";
+                        echo"<ul id='nav'>";
 
                         echo"<li><a href='profile.php'>Profile</a></li>";
                         echo"<li><a href='logout.php'>Logout</a></li>";
@@ -60,9 +60,9 @@
                     echo "<hr>";
                     echo "<br>";
 
-                    $sql = "SELECT * FROM tasks WHERE listid = ?"; //set up the sql statement
+                    $sql = "SELECT * FROM Tasks WHERE Listid = ?"; //set up the sql statement
                     $stmt = $conn->prepare($sql); //prepares
-                    $stmt->bindParam(1,$_SESSION['lid']);  //binds the parameters to execute
+                    $stmt->bindParam(1,$_SESSION['Listid']);  //binds the parameters to execute
                     $stmt->execute(); //run the sql code
                     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);  //brings back results
 
@@ -89,7 +89,7 @@
                         foreach ($working as $row) {
 
                             echo "<form action='edit_task.php' method='POST' name='form_" . $row['taskid'] . "'>";
-                            echo "<input type='hidden' name='tid' value='" . $row['taskid'] . "'>";
+                            echo "<input type='hidden' name='tid' value='" . $row['Taskid'] . "'>";
                             echo "<tr>";
                             echo "<td>Task: " . $row['Task'] . "</td>";
                             echo "<td>Due Date: " . date("Y-m-d H:i:s", $row['Duedate']) . "</td>";
@@ -112,7 +112,7 @@
                             echo "<form action='edit_task.php' method='POST' name='form_" . $row['Taskid'] . "'>";
                             echo "<input type='hidden' name='tid' value='" . $row['Taskid'] . "'>";
                             echo "<tr>";
-                            echo "<td>Task: " . $row['task'] . "</td>";
+                            echo "<td>Task: " . $row['Task'] . "</td>";
                             echo "<td>Due Date: " . date("Y-m-d H:i:s", $row['Duedate']) . "</td>";
                             echo "<td><input type='submit' name='Uncomplete' value='Uncomplete'></td>";
                             echo "<td><input type='submit' name='Delete' value='Delete'></td>";
@@ -123,7 +123,9 @@
                         echo "</table>";
 
                     } else {
+
                         echo "There are no tasks to display here right now!";
+
                     }
 
                     echo "</table><br>";

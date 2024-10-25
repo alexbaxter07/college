@@ -60,13 +60,13 @@
                     foreach($result as $row){
 
                         echo "<form action='edit_lists.php' method='post' name ='form_".$row['Listid']."'>";
-                        echo "<input type='hidden' name='Listid' value='".$row['Listid']."'>";
-                        echo "<tr>";
-                        echo "<td>List Name: ".$row['Listname']."</td>";
-                        echo "<td>Date: ".$row['Date']."</td>";
-                        echo "<td><input type='submit' name='edit' value='Edit'></td>";
-                        echo "<td><input type='submit' name='delete' value='Delete'></td>";
-                        echo "</tr>";
+                            echo "<input type='hidden' name='Listid' value='".$row['Listid']."'>";
+                            echo "<tr>";
+                            echo "<td>List Name: ".$row['Listname']."</td>";
+                            echo "<td>Date: ".$row['Date']."</td>";
+                            echo "<td><input type='submit' name='edit' value='Edit'></td>";
+                            echo "<td><input type='submit' name='delete' value='Delete'></td>";
+                            echo "</tr>";
                         echo "</form>";
                     }
 
