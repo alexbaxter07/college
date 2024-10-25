@@ -6,7 +6,7 @@
 
     if (!isset($_POST['delete'])) {
 
-        $_SESSION['lid'] = $_POST['lid'];
+        $_SESSION['Listid'] = $_POST['lid'];
 
         header("Location: del_list.php");
 
