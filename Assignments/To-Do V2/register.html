@@ -5,77 +5,81 @@
 
         <meta charset="UTF-8">
         <title>Register</title>
-        <link href="styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet"> <!-- Link to external CSS for styling -->
+
     </head>
 
     <body>
 
-        <div id = "container">
+        <div id="container"> <!-- Main container for the entire page -->
 
-            <div id="titlebar">
+            <div id="titlebar"> <!-- Title bar section -->
 
-                <h1>To-Do</h1>
-
-            </div>
-
-            <div id="navbar">
-
-                <ul id="nav">
-
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-
-                </ul>
+                <h1>To-Do</h1> <!-- Main title of the application -->
 
             </div>
 
-            <div id="content">
+            <div id="navbar"> <!-- Navigation bar section -->
 
-                <h2>SIGNUP form</h2>
+                <ul id="nav"> <!-- Start navigation list -->
 
-                <form action="reg.php" method="post">
+                    <li><a href="login.html">Login</a></li> <!-- Link to login page -->
+                    <li><a href="register.html">Register</a></li> <!-- Link to registration page -->
 
-                    <table>
+                </ul> <!-- End navigation list -->
+
+            </div>
+
+            <div id="content"> <!-- Content area for the registration form -->
+
+                <h2>Sign Up Form</h2> <!-- Heading for the registration form -->
+
+                <form action="reg.php" method="post"> <!-- Form for user registration -->
+
+                    <table> <!-- Table to organize form fields -->
 
                         <tr>
-                            <td><label for="uname" >Username: </label></td>
-                            <td><input type="text" id="uname" name="uname" placeholder="Enter a username" required></td>
+                            <td><label for="uname">Username:</label></td> <!-- Label for username input -->
+                            <td><input type="text" id="uname" name="uname" placeholder="Enter a username" required></td> <!-- Input for username -->
                         </tr>
 
                         <tr>
-                            <td><label for="password">Password: </label></td>
-                            <td><input type="password" id="password" name="password" placeholder="Enter your Password" required></td>
+                            <td><label for="password">Password:</label></td> <!-- Label for password input -->
+                            <td><input type="password" id="password" name="password" placeholder="Enter your password" required></td> <!-- Input for password -->
                         </tr>
 
                         <tr>
-                            <td><label for="cpassword">Confirm Password: </label></td>
-                            <td><input type="password" id="cpassword" name="cpassword" placeholder="Confirm your Password" required></td>
+                            <td><label for="cpassword">Confirm Password:</label></td> <!-- Label for confirm password input -->
+                            <td><input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password" required></td> <!-- Input for confirming password -->
                         </tr>
 
                         <tr>
-                            <td><label for="fname">First Name: </label></td>
-                            <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" required></td>
+                            <td><label for="fname">First Name:</label></td> <!-- Label for first name input -->
+                            <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" required></td> <!-- Input for first name -->
                         </tr>
 
                         <tr>
-                            <td><label for="sname">Surname: </label></td>
-                            <td><input type="text" id="sname" name="sname" placeholder="Enter your surname" required></td>
+                            <td><label for="sname">Surname:</label></td> <!-- Label for surname input -->
+                            <td><input type="text" id="sname" name="sname" placeholder="Enter your surname" required></td> <!-- Input for surname -->
                         </tr>
 
                         <tr>
-                            <td><label for="email">Email: </label> </td>
-                            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+                            <td><label for="email">Email:</label></td> <!-- Label for email input -->
+                            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td> <!-- Input for email -->
                         </tr>
 
-                        <tr><td><input type="submit" value="register"></td></tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Register" style="width: 100%;"> <!-- Submit button for the form, spans two columns -->
+                            </td>
+                        </tr>
 
-                    </table>
+                    </table> <!-- End of table for form fields -->
 
                 </form>
 
-            </div>
+            </div> <!-- End of content area -->
 
-        </div>
+        </div> <!-- End of main container -->
 
     </body>
 

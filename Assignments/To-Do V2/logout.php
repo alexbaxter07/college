@@ -13,10 +13,10 @@
     session_destroy();
 
 
-    header("refresh:1; url=index.html");
-    echo "<link rel='stylesheet' href='../styles.css'>";
+    header("refresh:1; url=index.html"); // redirects user to homepage
+    echo "<link rel='stylesheet' href='../styles.css'>"; //link to stylesheet
     echo "<div id='loggy'>";
-    echo "You have now been logged out. You will be redirected back to the start page";
+    echo "You have now been logged out. You will be redirected back to the start page"; //message for user
     echo "<\div>";
 
 ?>

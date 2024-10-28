@@ -3,52 +3,59 @@
 
   <head>
 
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link href="styles.css" rel="stylesheet">
+      <meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+      <title>Login</title> <!-- Title of the webpage -->
+      <link href="styles.css" rel="stylesheet"> <!-- Link to the external CSS file -->
 
   </head>
 
   <body>
 
-    <div id="container">
+    <div id="container"> <!-- Main container for the page -->
 
-        <div id = "titlebar">
+      <div id="titlebar">
 
-          <h1>To-Do</h1>
+        <h1>To-Do</h1> <!-- Main title of the application -->
+      </div>
 
-        </div>
 
-        <div id = "navbar">
+      <div id="navbar">
 
-          <ul id="nav">
+        <ul id="nav"> <!-- Navigation bar with links -->
 
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li> <!-- Link to the login page -->
+          <li><a href="register.html">Register</a></li> <!-- Link to the registration page -->
 
-          </ul>
+        </ul>
 
-        </div>
+      </div>
 
+      <!-- Content area -->
       <div id="content">
 
-        <h3>Login Form</h3>
+        <h3>Login Form</h3> <!-- Heading for the login form -->
 
-        <form action="verifylog.php" method="post" id = "login">
+        <!-- Form that submits to verifylog.php -->
+        <form action="verifylog.php" method="post" id="login">
 
+          <!-- Table structure for form layout -->
           <table>
 
             <tr>
-              <td><label for="uname" >Username: </label></td>
+              <td><label for="uname">Username: </label></td> <!-- Label for the username input -->
               <td><input type="text" id="uname" name="usname" placeholder="Enter a username" required></td>
+              <!-- Input field for the username; required field -->
             </tr>
 
             <tr>
-              <td><label for="password">Password: </label></td>
+              <td><label for="password">Password: </label></td> <!-- Label for the password input -->
               <td><input type="password" id="password" name="pasword" placeholder="Enter your Password" required></td>
+              <!-- Input field for the password; required field -->
             </tr>
 
-            <tr><td><input type="submit" value="Login"></td></tr>
+            <tr>
+              <td><input type="submit" value="Login"></td> <!-- Submit button to log in -->
+            </tr>
 
           </table>
 
