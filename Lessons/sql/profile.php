@@ -79,7 +79,12 @@
 
                 $date = $result['Signup'];
 
+<<<<<<< Updated upstream
                 echo "<h4>Date of signup</h4>";
+=======
+        echo date('d M Y', strtotime($date));
+        echo date('g:i A, l - d M Y', strtotime($date));
+>>>>>>> Stashed changes
 
                 echo date('g:i A, l - d M Y', strtotime($date));
 
