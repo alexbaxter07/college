@@ -2,19 +2,45 @@
 <html lang="en">
 
   <head>
-      <meta charset="UTF-8">
-      <title>Login</title>
+
+    <meta charset="UTF-8">
+    <title>Student Login</title>
+    <link href="../styles.css" rel="stylesheet">
+
   </head>
 
   <body>
 
-    <ul>
-      <li><a href="student_login.html">Student Login</a></li>
-      <li><a href="s_staff_login.html">School Staff Login</a></li>
-      <li><a href="t_staff_login.html">Trust Staff Login</a></li>
-      <li><a href="c_staff_login.html">Company Staff Login</a></li>
-      <li><a href="dfe_staff_login.html">DFE Staff Login</a></li>
-    </ul>
+    <form action = "verify_log.php" method = "post" id = "login">
+
+      <table>
+
+        <tr>
+          <td><label for="position">Please choose your position</label></td>
+          <td><select id="position">
+            <option value ="student">Student</option>
+            <option value="school_staff">School Staff</option>
+            <option value="company_staff">Company Staff</option>
+            <option value="trust_staff">Trust Staff</option>
+            <option value="dfe_staff">DFE STaff</option>
+          </select></td>
+        </tr>
+
+        <tr>
+          <td><lable for="email"> Email: </lable></td>
+          <td><input type="email" id="email" placeholder="Enter your email" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="password">Password: </label></td>
+          <td><input type="password" id="password" placeholder="Enter your Password" required></td>
+        </tr>
+
+        <tr><td><input type="submit" value="Login"></td></tr>
+
+      </table>
+
+    </form>
 
   </body>
 
