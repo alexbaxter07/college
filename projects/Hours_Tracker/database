@@ -1,0 +1,106 @@
+CREATE TABLE `student` (
+    `studentid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `fname` VARCHAR(255) NOT NULL,
+    `lname` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE `staff` (
+    `staffid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `fname` VARCHAR(255) NOT NULL,
+    `lname` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `role` BIGINT NOT NULL,
+    `schoolid` BIGINT UNSIGNED NOT NULL
+);
+
+CREATE TABLE `class` (
+    `classid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `studentid` BIGINT UNSIGNED NOT NULL,
+    `t_level_course` VARCHAR(255) NOT NULL,
+    `hours_needed` BIGINT NOT NULL
+);
+
+CREATE TABLE `school` (
+    `schoolid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `classid` BIGINT UNSIGNED NOT NULL
+);
+
+CREATE TABLE `trust` (
+    `trustid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `schoolid` BIGINT UNSIGNED NOT NULL
+);
+
+CREATE TABLE `company` (
+    `companyid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE `teachers` (
+    `teachersid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `staffid` BIGINT UNSIGNED NOT NULL,
+    `classid` BIGINT UNSIGNED NOT NULL,
+    `role` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE `contact` (
+    `contactid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `companyid` BIGINT UNSIGNED NOT NULL,
+    `fname` VARCHAR(255) NOT NULL,
+    `lname` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE `works_at` (
+    `workid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `companyid` BIGINT UNSIGNED NOT NULL,
+    `contactid` BIGINT UNSIGNED NOT NULL,
+    `role` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE `placement` (
+    `placementid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `contactid` BIGINT UNSIGNED NOT NULL,
+    `studentid` BIGINT UNSIGNED NOT NULL
+);
+
+CREATE TABLE `hours` (
+    `hoursid` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `placementid` BIGINT UNSIGNED NOT NULL,
+    `hoursworked` BIGINT NOT NULL,
+    `datelogged` DATETIME NOT NULL,
+    `verified` BOOLEAN NOT NULL,
+    `description` LONGTEXT NOT NULL
+);
+
+-- Add foreign keys
+ALTER TABLE `placement`
+    ADD CONSTRAINT `placement_contactid_foreign` FOREIGN KEY (`contactid`) REFERENCES `contact`(`contactid`);
+ALTER TABLE `placement`
+    ADD CONSTRAINT `placement_studentid_foreign` FOREIGN KEY (`studentid`) REFERENCES `student`(`studentid`);
+ALTER TABLE `staff`
+    ADD CONSTRAINT `staff_schoolid_foreign` FOREIGN KEY (`schoolid`) REFERENCES `school`(`schoolid`);
+ALTER TABLE `teachers`
+    ADD CONSTRAINT `teachers_classid_foreign` FOREIGN KEY (`classid`) REFERENCES `class`(`classid`);
+ALTER TABLE `teachers`
+    ADD CONSTRAINT `teachers_staffid_foreign` FOREIGN KEY (`staffid`) REFERENCES `staff`(`staffid`);
+ALTER TABLE `hours`
+    ADD CONSTRAINT `hours_placementid_foreign` FOREIGN KEY (`placementid`) REFERENCES `placement`(`placementid`);
+ALTER TABLE `works_at`
+    ADD CONSTRAINT `works_at_contactid_foreign` FOREIGN KEY (`contactid`) REFERENCES `contact`(`contactid`);
+ALTER TABLE `works_at`
+    ADD CONSTRAINT `works_at_companyid_foreign` FOREIGN KEY (`companyid`) REFERENCES `company`(`companyid`);
+ALTER TABLE `school`
+    ADD CONSTRAINT `school_classid_foreign` FOREIGN KEY (`classid`) REFERENCES `class`(`classid`);
+ALTER TABLE `trust`
+    ADD CONSTRAINT `trust_schoolid_foreign` FOREIGN KEY (`schoolid`) REFERENCES `school`(`schoolid`);
+ALTER TABLE `class`
+    ADD CONSTRAINT `class_studentid_foreign` FOREIGN KEY (`studentid`) REFERENCES `student`(`studentid`);
+
