@@ -11,23 +11,28 @@
 
   <body>
 
-    <form action = "verify_log.php" method = "post" id = "login">
+    <form action = "../student/stu_homepage.php" method = "post" id = "login">
 
       <table>
 
         <tr>
+
           <td><label for="position">Please choose your position</label></td>
+
           <td><select id="position">
+
             <option value ="student">Student</option>
             <option value="school_staff">School Staff</option>
             <option value="company_staff">Company Staff</option>
             <option value="trust_staff">Trust Staff</option>
-            <option value="dfe_staff">DFE STaff</option>
+            <option value="dfe_staff">DFE Staff</option>
+
           </select></td>
+
         </tr>
 
         <tr>
-          <td><lable for="email"> Email: </lable></td>
+          <td><label for="email"> Email: </label></td>
           <td><input type="email" id="email" placeholder="Enter your email" required></td>
         </tr>
 

@@ -21,7 +21,7 @@
 
     if (password_verify($pass, $rpswd)) {
 
-        header("refresh:1; url=../student/stu_homepage.html");
+        header("refresh:1; url=../student/stu_homepage.php");
         echo "you are now logged in! Heading to your homepage";
 
     } else {
