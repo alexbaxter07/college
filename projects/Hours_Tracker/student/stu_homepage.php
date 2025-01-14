@@ -33,8 +33,17 @@
 
         <h3>Homepage</h3>
 
+        <form method="get" action="" onchange="this.action = this.pages.value">
 
+            <select name="option" id="options" onchange="this.form.submit()"></select>
+                <option value="hours_left.php">Hours left</option>
+                <option value="hours_log.php">Log hours</option>
+                <option value="completed_hours.php">Completed hours</option>
+                <option value="company_contact.php">Company Contact</option>
+            <select
+            <input type="submit" value="Go">
 
+        </form>
 
     </div>
 
