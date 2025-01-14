@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Student Homepage</title>
+    <title>Company Contact</title>
     <link href="../styles.css" rel="stylesheet">
 
 </head>
