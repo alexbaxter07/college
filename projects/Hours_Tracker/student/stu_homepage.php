@@ -3,52 +3,57 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <meta charset="UTF-8">
-    <title>Student Homepage</title>
-    <link href="../styles.css" rel="stylesheet">
+    <head>
 
-</head>
+        <meta charset="UTF-8">
+        <title>Student Homepage</title>
+        <link href="../styles.css" rel="stylesheet">
 
-<body>
+    </head>
 
-<div id="container">
+    <body>
 
-    <div id="titlebar">
-        <h1>Hours Tracker</h1>
-    </div>
+        <div id="container">
 
-    <div id="navbar">
+            <div id="titlebar">
+                <h1>Hours Tracker</h1>
+            </div>
 
-        <ul id="nav">
-            <li><a href="hours_left.php">Hours Left</a></li>
-            <li><a href="completed_hours.php">Completed hours</a></li>
-            <li><a href="company_contact.php">company contact</a></li>
-        </ul>
+            <div id="navbar">
 
-    </div>
+                <ul id="nav">
+                    <li><a href="hours_left.php">Hours Left</a></li>
+                    <li><a href="completed_hours.php">Completed hours</a></li>
+                    <li><a href="company_contact.php">company contact</a></li>
+                </ul>
 
-    <div id="content">
+            </div>
 
-        <h3>Homepage</h3>
+            <div id="content">
 
-        <form method="get" action="" onchange="this.action = this.pages.value">
+                <h3>Homepage</h3>
 
-            <select name="option" id="options" onchange="this.form.submit()"></select>
-                <option value="hours_left.php">Hours left</option>
-                <option value="hours_log.php">Log hours</option>
-                <option value="completed_hours.php">Completed hours</option>
-                <option value="company_contact.php">Company Contact</option>
-            <select
-            <input type="submit" value="Go">
+                <form method="get" id="pageSelector">
 
-        </form>
+                    <label for="options">Navigate to:</label>
 
-    </div>
+                    <select name="option" id="options" onchange="window.location.href=this.value;">
 
-</div>
+                        <option value="">Select a Page</option>
+                        <option value="hours_left.php">Hours Left</option>
+                        <option value="hours_log.php">Log Hours</option>
+                        <option value="completed_hours.php">Completed Hours</option>
+                        <option value="company_contact.php">Company Contact</option>
 
-</body>
+                    </select>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </body>
 
 </html>
