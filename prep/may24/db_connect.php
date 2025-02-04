@@ -1,8 +1,8 @@
 <?php
 
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "zoo";
+    $password = "Password";
     $dname = "zoo";
 
     //trys connecting to database if it cant then gives an error message for robustness
