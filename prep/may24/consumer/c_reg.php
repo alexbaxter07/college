@@ -25,7 +25,7 @@
 
 
 
-        $sql = "Insert into user values (?,?,?,?,?)";
+        $sql = "Insert into user(user_name, first_name, last_name, password, user_type_id, signup_date) values (?,?,?,?,?,?,?)";
 
     }
 
