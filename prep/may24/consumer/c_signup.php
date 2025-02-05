@@ -42,42 +42,54 @@
                     <table> <!-- Table to organize form fields -->
 
                         <tr>
-                            <td><label for="uname">Username:</label></td> <!-- Label for username input -->
-                            <td><input type="text" id="uname" name="uname" placeholder="Enter a username" required></td> <!-- Input for username -->
+                            <td><label for="uname">Username:</label></td>
+                            <td><input type="text" id="uname" name="uname" placeholder="Enter a username" required></td>
                         </tr>
 
                         <tr>
-                            <td><label for="fname">First Name:</label></td> <!-- Label for first name input -->
-                            <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" required></td> <!-- Input for first name -->
+                            <td><label for="fname">First Name:</label></td>
+                            <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" required></td>
                         </tr>
 
                         <tr>
-                            <td><label for="sname">Surname:</label></td> <!-- Label for surname input -->
-                            <td><input type="text" id="sname" name="sname" placeholder="Enter your surname" required></td> <!-- Input for surname -->
+                            <td><label for="sname">Surname:</label></td>
+                            <td><input type="text" id="sname" name="sname" placeholder="Enter your surname" required></td>
                         </tr>
 
                         <tr>
-                            <td><label for="email">Email:</label></td> <!-- Label for email input -->
-                            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td> <!-- Input for email -->
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
                         </tr>
 
                         <tr>
-                            <td><label for="password">Password:</label></td> <!-- Label for password input -->
-                            <td><input type="password" id="password" name="password" placeholder="Enter your password" required></td> <!-- Input for password -->
+                            <td><label for="password">Password:</label></td>
+                            <td><input type="password" id="password" name="password" placeholder="Enter your password" required></td>
                         </tr>
 
                         <tr>
-                            <td><label for="cpassword">Confirm Password:</label></td> <!-- Label for confirm password input -->
-                            <td><input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password" required></td> <!-- Input for confirming password -->
+                            <td><label for="cpassword">Confirm Password:</label></td>
+                            <td><input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password" required></td>
                         </tr>
 
-                        <tr><!-- Submit button for the form, spans two columns -->
-                            <td colspan="2"><input type="submit" value="Register""></td>
+                        <tr>
+                            <td><label for="user_type">Select type of customer:</label></td>
+                            <td>
+                                <select id="user_type" name="user_type">
+                                    <option value="public">Public</option>
+                                    <option value="school">School</option>
+                                    <option value="business">Business</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr> <!-- Submit button for the form, spans two columns -->
+                            <td colspan="2"><input type="submit" value="Register"></td>
                         </tr>
 
                     </table> <!-- End of table for form fields -->
 
                 </form>
+
 
             </div> <!-- End of content area -->
 
