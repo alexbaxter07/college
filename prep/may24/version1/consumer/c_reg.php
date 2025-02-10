@@ -27,6 +27,14 @@
 
         $sql = "Insert into user(user_name, first_name, last_name, password, user_type_id, signup_date) values (?,?,?,?,?,?,?)";
 
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $username);
+        $stmt->bindParam(2, $f_name);
+        $stmt->bindParam(3, $l_name);
+        $stmt->bindParam(4, $password);
+        $stmt->bindParam(5, $email);
+        
+
     }
 
 ?>
