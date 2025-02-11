@@ -4,7 +4,11 @@
 
     session_start(); // start session to include session variables across pages it is used
 
-    include("../../db_connect.php");
+    include("a_functions.php");
+
+    if(admin_sesh_started()){
+        header("location: a_index.php");
+    }
 
 ?>
 
