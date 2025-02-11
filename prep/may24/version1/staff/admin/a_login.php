@@ -1,9 +1,10 @@
 <?php
-//page to get information to login an admin
 
-session_start(); // start session to include session variables across pages it is used
+    //page to get information to login an admin
 
-include("../db_connect.php");
+    session_start(); // start session to include session variables across pages it is used
+
+    include("../../db_connect.php");
 
 ?>
 
