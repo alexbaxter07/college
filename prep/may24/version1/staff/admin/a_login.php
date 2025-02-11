@@ -13,7 +13,7 @@ include("../db_connect.php");
 
     <head>
 
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../../styles.css">
         <title>Admin Login</title>
 
     </head>
