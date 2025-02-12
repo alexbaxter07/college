@@ -1,14 +1,17 @@
 <?php
+// page for highest level admins to add other admins of different levels
 
     include "../../a_functions.php";
 
-    session_start();
+    session_start(); //session start for usage of admin session variables
 
+    //check priv level
     if($_SESSION["level"]!='SUPER'){
 
         header("refresh:4; location: a_index.php");
         echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
         echo "Admin already exists. login or ask to be registered.";
+
     }else{
 
         echo "<DOCTYPE html>";
@@ -26,7 +29,7 @@
 
                 echo "<h2>Add Admin Form</h2>"; // Heading for the registration form
 
-                echo "<form action='add_admin_reg.php' method='post'>"; // Form for user registration
+                echo "<form action='add_admin_reg.php' method='post'>"; // Form for admin registration
 
                     echo "<table>"; // Table to organize form fields
 

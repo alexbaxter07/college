@@ -4,59 +4,50 @@
     try{ // try except to catch any errors
 
         session_start(); //session start so that the page can connect to session data
-        include("../../db_connect.php");
+        include("a_functions.php");
+        include("../../functions.php");
 
-        // check to see password matches each other
-        if($_POST['password'] != $_POST['confirm_password']){
+        $username = $_POST['uname'];
 
-            header("refesh:4; location: a_login.php");
-            echo "Passwords do not match";
+        $sql = "SELECT password, privilege FROM admin_user WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt -> bindParam(1, $username);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        }else{
+        if($result){ // if user existes with given details
 
-            $username = $_POST['uname'];
+            if(password_verify($_POST['password'], $result['password'])){ // if password match database
 
-            $sql = "SELECT password, privilege FROM admin_user WHERE username = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt -> bindParam(1, $username);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                //creation of session variables
+                $_SESSION["admin_login"] = true;
+                $_SESSION["username"] = $_POST['uname'];
+                $_SESSION["level"] = $result['privilege'];
 
-            if($result){ // if user existes with given details
+                // send to admin index
+                header("location: a_index.php");
 
-                if(password_verify($_POST['password'], $result['password'])){ // if password match database
-
-                    //creation of session variables
-                    $_SESSION["admin_login"] = true;
-                    $_SESSION["username"] = $_POST['uname'];
-                    $_SESSION["level"] = $result['privilege'];
-
-                    // send to admin index
-                    header("location: a_index.php");
-
-                    exit();
-
-                }else{
-
-                    session_destroy(); // if failed kills session
-
-                    header("refresh:4; location: a_login.php"); //send back to login
-
-                    echo "<link rel='stylesheet' href='../../styles.css' type='css'>"; // link sylesheet
-
-                    echo "Wrong password"; //error message
-
-                }
+                exit();
 
             }else{
 
-                header("refresh:4; location: a_login.php"); // send back to login
+                session_destroy(); // if failed kills session
 
-                echo "<link rel='stylesheet' href='../../styles.css' type='css'>"; //link to stylesheet
+                header("refresh:4; location: a_login.php"); //send back to login
 
-                echo "User not found"; // error message
+                echo "<link rel='stylesheet' href='../../styles.css' type='css'>"; // link sylesheet
+
+                echo "Wrong password"; //error message
 
             }
+
+        }else{
+
+            header("refresh:4; location: a_login.php"); // send back to login
+
+            echo "<link rel='stylesheet' href='../../styles.css' type='css'>"; //link to stylesheet
+
+            echo "User not found"; // error message
 
         }
 

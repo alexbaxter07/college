@@ -1,4 +1,5 @@
 <?php
+// page used for differant admin functions to be used within the admin system
 
     function super_checker(){
         include("../../dbconnect.php");
