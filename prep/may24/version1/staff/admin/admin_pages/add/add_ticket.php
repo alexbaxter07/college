@@ -6,7 +6,7 @@
     session_start(); //session start for usage of admin session variables
 
     //check priv level
-    if($_SESSION["level"]!='SUPER'){
+    if($_SESSION["level"]=='EDITOR'){
 
         header("refresh:4; location: a_index.php");
         echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";

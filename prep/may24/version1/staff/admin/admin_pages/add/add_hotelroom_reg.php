@@ -3,7 +3,7 @@
 
     session_start();
 
-    if($_SESSION['level'] != 'SUPER'){
+    if($_SESSION['level'] == 'EDITOR'){
 
         header("refresh:4; url=admin_login.php");
         echo "<link rel='stylesheet' href='../../../../styles.css'>";
