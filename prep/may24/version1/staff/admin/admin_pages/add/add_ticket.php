@@ -1,5 +1,5 @@
 <?php
-// page for highest level admins to add hotel rooms to the db
+// page to add tickets to system that only highest level of admin can do
 
     include "../../a_functions.php";
 
@@ -18,8 +18,8 @@
 
             echo "<head>";
 
-                echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
-                echo"<title>Add Hotel Rooms</title>";
+            echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
+            echo"<title>Add Ticket Type</title>";
 
             echo "</head>";
 
@@ -28,37 +28,30 @@
                 include "../../a_navbar.php";
 
                 // Heading for the registration form
-                echo "<h2>Add Hotel Room</h2>";
+                echo "<h2>Add Ticket Type</h2>";
 
-                echo "<form action='add_hotelroom_reg.php' method='post'>";
+                echo "<form action='add_ticket_reg.php' method='post'>";
 
                     echo "<table>";
 
                         echo "<tr>";
 
-                            echo"<td><label for='type'>hotel room type:</label></td>";
-                            echo "<td><input type='text' id='type' name='type' placeholder='Enter hotel room type' required></td>";
+                            echo"<td><label for='type'>ticket type:</label></td>";
+                            echo "<td><input type='text' id='type' name='type' placeholder='Enter ticket type' required></td>";
 
                         echo "</tr>";
 
                         echo "<tr>";
 
-                            echo "<td><label for='occ'>hotel room occupancy:</label></td>";
-                            echo "<td><input type='number' id='occ' name='occ' placeholder='Enter occupancy'></td>";
+                            echo "<td><label for='ppt'>price per ticket:</label></td>";
+                            echo "<td><input type='text' id='ppt' name='ppt' placeholder='Enter ticket price'></td>";
 
                         echo "</tr>";
 
                         echo "<tr>";
 
-                            echo "<td><label for='ammount'>ammount of hotel rooms:</label></td>";
+                            echo "<td><label for='ammount'>ammount of tickets:</label></td>";
                             echo "<td><input type='number' id='ammount' name='ammount' placeholder='Enter ammount'></td>";
-
-                        echo "</tr>";
-
-                        echo "<tr>";
-
-                            echo "<td><label for='ppn'>hotel room price per night:</label></td>";
-                            echo "<td><input type='text' id='ppn' name='ppn' placeholder='Enter price per night'></td>";
 
                         echo "</tr>";
 
@@ -68,14 +61,13 @@
 
                         echo "</tr>";
 
-                    echo "</table>"; // End of table for form fields
+                        echo "</table>"; // End of table for form fields
 
-                echo "</form>";
+                    echo "</form>";
 
             echo "</body>";
 
         echo "</html>";
 
     }
-
 ?>
