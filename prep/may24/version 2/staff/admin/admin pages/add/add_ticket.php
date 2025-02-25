@@ -25,7 +25,7 @@
             echo "<head>";
 
             echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
-            echo"<title>Add Ticket Type</title>";
+            echo "<title>Add Ticket Type</title>";
 
             echo "</head>";
 
