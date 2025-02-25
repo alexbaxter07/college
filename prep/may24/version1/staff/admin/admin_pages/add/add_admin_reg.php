@@ -3,7 +3,7 @@
 
     // gets both of the functions files for use
     include("../../a_functions.php");
-    include("../../a_functions.php");
+    include("../../../../functions.php");
 
     if($_POST['level']== "SUPER"and super_checker()){
 
@@ -29,8 +29,7 @@
             $stmt = $conn->prepare($sql); //prepare to sql
 
             $stmt->bindParam(1,$_POST['uname']);  //bind parameters for security
-            $hpswd = password_hash($_POST['password'], PASSWORD_DEFAULT);  //hash the password
-            $stmt->bindParam(2,$hpswd);
+            $stmt->bindParam(2,$hpswd); //hash the password
             $stmt->bindParam(3,$_POST['email']);
             $stmt->bindParam(4,$_POST['fname']);
             $stmt->bindParam(5,$_POST['sname']);

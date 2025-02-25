@@ -50,6 +50,13 @@
 
                         echo "<tr>";
 
+                            echo "<td><label for='ammount'>ammount of hotel rooms:</label></td>";
+                            echo "<td><input type='number' id='ammount' name='ammount' placeholder='Enter ammount'></td>";
+
+                        echo "</tr>";
+
+                        echo "<tr>";
+
                             echo "<td><label for='ppn'>hotel room price per night:</label></td>";
                             echo "<td><input type='text' id='ppn' name='ppn' placeholder='Enter price per night'></td>";
 
