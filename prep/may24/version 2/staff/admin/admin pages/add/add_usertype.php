@@ -5,10 +5,16 @@
 
     session_start(); //session start for usage of admin session variables
 
-    //check priv level
-    if($_SESSION["level"]=='EDITOR'){
+    // checked user is logged in
+    if (!isset($_SESSION['level'])) {
 
-        header("refresh:4; location: a_index.php");
+        header("refresh:4; url=../a_login.php");  // if they are only an editor, then send them elsewhere
+        echo "<link rel='stylesheet' href='../../../../styles.css'>";  //
+        echo "Not logged in, please log in";
+
+    } elseif(isset($_SESSION['level']) && $_SESSION['level']=='EDITOR') {//check logged in and admin level
+
+        header("refresh:4; location: a_index.php"); //if they are only editor go back to home
         echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
         echo "Admin already exists. login or ask to be registered.";
 

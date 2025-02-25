@@ -2,11 +2,11 @@
 
     echo"<ul id='menu'>";
 
-        echo"<a href='a_index.php'<li>Home</li></a>";
+        echo "<a href='a_index.php'<li>Home</li></a>";
 
         if (empty($_SESSION['admin_login'])){
 
-            echo"<li><a href='a_login.php'>Login</a></li>";
+            echo "<li><a href='a_login.php'>Login</a></li>";
 
         }elseif ($_SESSION['admin_login']){
 
