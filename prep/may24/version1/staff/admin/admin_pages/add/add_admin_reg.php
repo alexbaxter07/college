@@ -42,7 +42,7 @@
             $admin_reg_task = "Registration of a " . strtolower($_POST['admin_type']) . " admin user";
             auditor($_POST['username'], $admin_reg_type, $admin_reg_task);
 
-            header("refresh:5; url=admin_login.php"); //confirm and redirect
+            header("refresh:5; url=a_login.php"); //confirm and redirect
             echo "<link rel='stylesheet' href='../../../../styles.css'>";
             echo "Successfully registered";
 

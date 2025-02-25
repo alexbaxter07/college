@@ -1,5 +1,5 @@
 <?php
-// page to validate adding a hotel room
+// page to validate adding a ticket
 
     session_start();
 
@@ -12,26 +12,26 @@
 
         // gets both of the functions files for use
         include("../../a_functions.php");
+        include("../../../../functions.php");
         include("../../../../db_connect.php");
 
-        try{
+        try{//try this code
 
-            $sql = "INSERT INTO hotel_room (type, occupancy, no_of_rooms, price) VALUES (?, ?, ?, ?)";  //prepare the sql to be sent
+            $sql = "INSERT INTO tickets (type, price, no_of_tickets) VALUES (?, ?, ?)";  //prepare the sql to be sent
             $stmt = $conn->prepare($sql); //prepare to sql
 
             $stmt->bindParam(1,$_POST['type']);  //bind parameters for security
-            $stmt->bindParam(2,$_POST['occ']);
+            $stmt->bindParam(2,$_POST['ppt']);
             $stmt->bindParam(3,$_POST['ammount']);
-            $stmt->bindParam(4,$_POST['ppn']);
 
             $stmt->execute();  //run the query to insert
 
-            $admin_reg_task = "Registration of a " . $_POST['type'] . " Hotel Room by ". $_SESSION['username'];
-            auditor($_SESSION["username"], "newroom", $admin_reg_task);
+            $admin_reg_task = "Registration of a " . $_POST['type'] . " ticket type by ". $_SESSION['username'];
+            auditor($_SESSION["username"], "newticket", $admin_reg_task);
 
             header("refresh:5; url=../a_index.php"); //confirm and redirect
             echo "<link rel='stylesheet' href='../../../../styles.css'>";
-            echo "Successfully registered " . $_POST['type'] . " hotel room type";
+            echo "Successfully registered " . $_POST['type'] . " ticket type";
 
         }catch (PDOException $e) { //catch error
 
@@ -45,3 +45,4 @@
     }
 
 ?>
+    }
