@@ -21,7 +21,11 @@
 
         <div id="container">
 
-            <--!content here-->
+            <?php include('a_navbar.php'); ?>
+
+            <h1> Admin System </h1>
+
+            <p> Use the links above to do the task needed</p>
 
         </div>
 
