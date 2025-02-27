@@ -35,7 +35,7 @@
 
                 header("refresh:4; location: a_login.php"); //send back to login
 
-                echo "<link rel='stylesheet' href='../../styles.css' type='css'>"; // link sylesheet
+                echo "<link rel='stylesheet' href='admin_styles.css' type='css'>"; // link sylesheet
 
                 echo "Wrong password"; //error message
 
@@ -45,7 +45,7 @@
 
             header("refresh:4; location: a_login.php"); // send back to login
 
-            echo "<link rel='stylesheet' href='../../styles.css' type='css'>"; //link to stylesheet
+            echo "<link rel='stylesheet' href='admin_styles.css' type='css'>"; //link to stylesheet
 
             echo "User not found"; // error message
 

@@ -8,13 +8,13 @@
     if($_POST['level']== "SUPER"and super_checker()){
 
         header("refresh:4; location: a_login.php");
-        echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
+        echo "<link rel='stylesheet' type='text/css' href='../../admin_styles.css'>";
         echo "Super Admin exists go login";
 
     }elseif (password_check($_POST['password'], $_POST['cpassword'])!=true){
 
         header("refresh:4; location: a_login.php");
-        echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
+        echo "<link rel='stylesheet' type='text/css' href='../../admin_styles.css'>";
         echo "password related issue";
 
     }else{
@@ -43,13 +43,13 @@
             auditor($_POST['username'], $admin_reg_type, $admin_reg_task);
 
             header("refresh:5; url=a_login.php"); //confirm and redirect
-            echo "<link rel='stylesheet' href='../../../../styles.css'>";
+            echo "<link rel='stylesheet' href='../../admin_styles.css'>";
             echo "Successfully registered";
 
         } catch (PDOException $e) {
 
             header("refresh:4; location: a_login.php");
-            echo "<link rel='stylesheet' type='text/css' href='../../../../styles.css'>";
+            echo "<link rel='stylesheet' type='text/css' href='../../admin_styles.css'>";
             echo "password related issue";
 
         }

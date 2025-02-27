@@ -6,7 +6,7 @@
     if($_SESSION['level'] == 'EDITOR'){
 
         header("refresh:4; url=admin_login.php");
-        echo "<link rel='stylesheet' href='../../../../styles.css'>";
+        echo "<link rel='stylesheet' href='../../admin_styles.css'>";
         echo "Not high enough admin rights";
     }else{
 
@@ -30,13 +30,13 @@
             auditor($_SESSION["username"], "newroom", $admin_reg_task);
 
             header("refresh:5; url=../a_index.php"); //confirm and redirect
-            echo "<link rel='stylesheet' href='../../../../styles.css'>";
+            echo "<link rel='stylesheet' href='../../admin_styles.css'>";
             echo "Successfully registered " . $_POST['type'] . " hotel room type";
 
         }catch (PDOException $e) { //catch error
 
             header("refresh:4; url=../a_login.php");
-            echo "<link rel='stylesheet' href='../../../../styles.css'>";
+            echo "<link rel='stylesheet' href='../../admin_styles.css'>";
             echo "Error: " . $e->getMessage();
             echo "Failed to add new hotel room";
 

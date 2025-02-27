@@ -1,0 +1,14 @@
+/*Style sheet for website styling for admin only general/user is separate*/
+
+body {
+    background: #bf9626;
+    font-family: Arial, Calibri, sans-serif ;
+}
+
+#container {
+    align-content: center;
+}
+
+ul#menu li{
+    display: inline;
+}
