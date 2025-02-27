@@ -31,78 +31,82 @@
 
             echo "<body>";
 
-                include "../../a_navbar.php";
+                echo "<div id ='container>";
 
-                echo "<h2>Add Admin Form</h2>"; // Heading for the registration form
+                    include "../../a_navbar.php";
 
-                echo "<form action='add_admin_reg.php' method='post'>"; // Form for admin registration
+                    echo "<h2>Add Admin Form</h2>"; // Heading for the registration form
 
-                    echo "<table>"; // Table to organize form fields
+                    echo "<form action='add_admin_reg.php' method='post'>"; // Form for admin registration
 
-                        echo "<tr>";
+                        echo "<table>"; // Table to organize form fields
 
-                            echo "<td><label for='uname'>Username:</label></td>";
-                            echo "<td><input type='text' id='uname' name='uname' placeholder='Enter a username' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='uname'>Username:</label></td>";
+                                echo "<td><input type='text' id='uname' name='uname' placeholder='Enter a username' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='fname'>First Name:</label></td>";
-                            echo "<td><input type='text' id='fname' name='fname' placeholder='Enter your first name' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='fname'>First Name:</label></td>";
+                                echo "<td><input type='text' id='fname' name='fname' placeholder='Enter your first name' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='sname'>Surname:</label></td>";
-                            echo "<td><input type='text' id='sname' name='sname' placeholder='Enter your surname' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='sname'>Surname:</label></td>";
+                                echo "<td><input type='text' id='sname' name='sname' placeholder='Enter your surname' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='email'>Email:</label></td>";
-                            echo "<td><input type='email' id='email' name='email' placeholder='Enter your email' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='email'>Email:</label></td>";
+                                echo "<td><input type='email' id='email' name='email' placeholder='Enter your email' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='password'>Password:</label></td>";
-                            echo "<td><input type='password' id='password' name='password' placeholder='Enter your password' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='password'>Password:</label></td>";
+                                echo "<td><input type='password' id='password' name='password' placeholder='Enter your password' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='cpassword'>Confirm Password:</label></td>";
-                            echo "<td><input type='password' id='cpassword' name='cpassword' placeholder='Confirm your password' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='cpassword'>Confirm Password:</label></td>";
+                                echo "<td><input type='password' id='cpassword' name='cpassword' placeholder='Confirm your password' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='admin_type'>Select type of admin:</label></td>";
+                            echo "<tr>";
 
-                            echo "<td>";
-                                echo "<select id='admin_type' name='Aadmin_type'>";
-                                    echo "<option value='CREATOR'>Creator</option>";
-                                    echo "<option value='EDITOR'>Editor</option>";
-                                    echo "<option value='SUPER'>Super</option>";
-                                    echo "</select>";
-                            echo "</td>";
-                        echo"</tr>";
+                                echo "<td><label for='admin_type'>Select type of admin:</label></td>";
 
-                        echo "<tr>"; // Submit button for the form, spans two columns
+                                echo "<td>";
+                                    echo "<select id='admin_type' name='Aadmin_type'>";
+                                        echo "<option value='CREATOR'>Creator</option>";
+                                        echo "<option value='EDITOR'>Editor</option>";
+                                        echo "<option value='SUPER'>Super</option>";
+                                        echo "</select>";
+                                echo "</td>";
+                            echo"</tr>";
 
-                            echo "<td colspan='2'><input type='submit' value='Register'></td>";
+                            echo "<tr>"; // Submit button for the form, spans two columns
 
-                        echo "</tr>";
+                                echo "<td colspan='2'><input type='submit' value='Register'></td>";
 
-                    echo "</table>"; // End of table for form fields
+                            echo "</tr>";
 
-                echo "</form>";
+                        echo "</table>"; // End of table for form fields
+
+                    echo "</form>";
+
+                echo "</div>";
 
             echo "</body>";
 

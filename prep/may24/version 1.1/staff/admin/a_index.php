@@ -19,6 +19,10 @@
 
     <body>
 
-        <--!content here-->
+        <div id="container">
+
+            <--!content here-->
+
+        </div>
 
     </body>

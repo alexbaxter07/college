@@ -31,52 +31,56 @@
 
             echo "<body>";
 
-                include "../../a_navbar.php";
+                echo "<div id='container>";
 
-                // Heading for the registration form
-                echo "<h2>Add Hotel Room</h2>";
+                    include "../../a_navbar.php";
 
-                echo "<form action='add_hotelroom_reg.php' method='post'>";
+                    // Heading for the registration form
+                    echo "<h2>Add Hotel Room</h2>";
 
-                    echo "<table>";
+                    echo "<form action='add_hotelroom_reg.php' method='post'>";
 
-                        echo "<tr>";
+                        echo "<table>";
 
-                            echo"<td><label for='type'>hotel room type:</label></td>";
-                            echo "<td><input type='text' id='type' name='type' placeholder='Enter hotel room type' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo"<td><label for='type'>hotel room type:</label></td>";
+                                echo "<td><input type='text' id='type' name='type' placeholder='Enter hotel room type' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='occ'>hotel room occupancy:</label></td>";
-                            echo "<td><input type='number' id='occ' name='occ' placeholder='Enter occupancy'></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='occ'>hotel room occupancy:</label></td>";
+                                echo "<td><input type='number' id='occ' name='occ' placeholder='Enter occupancy'></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='ammount'>ammount of hotel rooms:</label></td>";
-                            echo "<td><input type='number' id='ammount' name='ammount' placeholder='Enter ammount'></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='ammount'>ammount of hotel rooms:</label></td>";
+                                echo "<td><input type='number' id='ammount' name='ammount' placeholder='Enter ammount'></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                            echo "<td><label for='ppn'>hotel room price per night:</label></td>";
-                            echo "<td><input type='text' id='ppn' name='ppn' placeholder='Enter price per night'></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                                echo "<td><label for='ppn'>hotel room price per night:</label></td>";
+                                echo "<td><input type='text' id='ppn' name='ppn' placeholder='Enter price per night'></td>";
 
-                        echo "<tr>"; // Submit button for the form, spans two columns
+                            echo "</tr>";
 
-                            echo "<td colspan='2'><input type='submit' value='Register'></td>";
+                            echo "<tr>"; // Submit button for the form, spans two columns
 
-                        echo "</tr>";
+                                echo "<td colspan='2'><input type='submit' value='Register'></td>";
 
-                    echo "</table>"; // End of table for form fields
+                            echo "</tr>";
 
-                echo "</form>";
+                        echo "</table>"; // End of table for form fields
+
+                    echo "</form>";
+
+                echo "</div>";
 
             echo "</body>";
 

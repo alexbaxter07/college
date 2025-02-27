@@ -31,37 +31,41 @@
 
             echo "<body>";
 
-                include "../../a_navbar.php";
+                echo "<div id='container>";
 
-                echo "<h2>Add User Type</h2>"; // Heading for the registration form
+                    include "../../a_navbar.php";
 
-                echo "<form action='add_usertype_reg.php' method='post'>"; // Form for admin registration
+                    echo "<h2>Add User Type</h2>"; // Heading for the registration form
 
-                    echo "<table>"; // Table to organize form fields
+                    echo "<form action='add_usertype_reg.php' method='post'>"; // Form for admin registration
 
-                        echo "<tr>";
+                        echo "<table>"; // Table to organize form fields
 
-                        echo"<td><label for='type'>ticket type:</label></td>";
-                        echo "<td><input type='text' id='type' name='type' placeholder='Enter ticket type' required></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                            echo"<td><label for='type'>ticket type:</label></td>";
+                            echo "<td><input type='text' id='type' name='type' placeholder='Enter ticket type' required></td>";
 
-                        echo "<tr>";
+                            echo "</tr>";
 
-                        echo "<td><label for='discout'>discount as decimal:</label></td>";
-                        echo "<td><input type='text' id='discount' name='discount' placeholder='Enter discount as decimal'></td>";
+                            echo "<tr>";
 
-                        echo "</tr>";
+                            echo "<td><label for='discout'>discount as decimal:</label></td>";
+                            echo "<td><input type='text' id='discount' name='discount' placeholder='Enter discount as decimal'></td>";
 
-                        echo "<tr>"; // Submit button for the form, spans two columns
+                            echo "</tr>";
 
-                        echo "<td colspan='2'><input type='submit' value='Register'></td>";
+                            echo "<tr>"; // Submit button for the form, spans two columns
 
-                        echo "</tr>";
+                            echo "<td colspan='2'><input type='submit' value='Register'></td>";
 
-                    echo "</table>"; // End of table for form fields
+                            echo "</tr>";
 
-                echo "</form>";
+                        echo "</table>"; // End of table for form fields
+
+                    echo "</form>";
+
+                echo "</div>";
 
             echo "</body>";
 
