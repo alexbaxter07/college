@@ -4,6 +4,7 @@
     try{ // try except to catch any errors
 
         session_start(); //session start so that the page can connect to session data
+
         include("a_functions.php");
         include("../../functions.php");
 

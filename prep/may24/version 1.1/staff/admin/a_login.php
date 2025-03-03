@@ -27,7 +27,7 @@
 
         <div id="container">
 
-            <form id="admin_log_form" method="post" action="a_validate.php">  <!-- admin login form that will send the results to a validate form -->
+            <form id="admin_log_form" method="post" action="a_login_reg.php">  <!-- admin login form that will send the results to a validate form -->
 
                 <table id="admin_login"> <!-- table to organise form -->
 
