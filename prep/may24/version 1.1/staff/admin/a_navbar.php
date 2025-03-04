@@ -29,9 +29,9 @@
             //update only
             if ($_SESSION["level"]=="SUPER"or $_SESSION["level"]=="CREATOR"or $_SESSION["level"]=="EDITOR"){
 
-                echo"<a href='admin_pages/update/ud_ticket.php'<li>Add Ticket</li></a>";
-                echo"<a href='admin_pages/update/ud_hotelroom.php'<li>Add Hotel Room</li></a>";
-                echo"<a href='admin_pages/update/up_usertype.php'<li>Add UserType</li></a>";
+                echo"<a href='admin_pages/update/ud_ticket.php'<li>Update Ticket</li></a>";
+                echo"<a href='admin_pages/update/ud_hotelroom.php'<li>Update Hotel Room</li></a>";
+                echo"<a href='admin_pages/update/up_usertype.php'<li>Update UserType</li></a>";
 
             }
 
@@ -39,6 +39,4 @@
             echo"<a href='../../logout.php'<li>Logout</li></a>";
 
         }
-    echo"</ul>"
-
-?>
+    echo"</ul>";

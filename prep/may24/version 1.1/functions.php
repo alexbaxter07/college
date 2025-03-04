@@ -37,5 +37,3 @@
             echo "Auditor error: ". $e->getMessage();
         }
     }
-
-?>

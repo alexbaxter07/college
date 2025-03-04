@@ -1,24 +1,24 @@
 <?php
+session_start(); //session start for usage of admin session variables
+include "../../a_functions.php";
 // page for highest level admins to add other admins of different levels
 
-    include "../../a_functions.php";
 
-    session_start(); //session start for usage of admin session variables
 
     // checked user is logged in
-    if (!isset($_SESSION['level'])) {
-
-        header("refresh:4; url=../a_login.php");  // if they are only an editor, then send them elsewhere
-        echo "<link rel='stylesheet' href='../../admin_styles.css'>";  //
-        echo "Not logged in, please log in";
-
-    } elseif(isset($_SESSION['level']) && $_SESSION['level']!='SUPER'){//check logged in and admin level
-
-        header("refresh:4; location: a_index.php"); //if they are only editor go back to home
-        echo "<link rel='stylesheet' type='text/css' href='../../admin_styles.css'>";
-        echo "Admin already exists. login or ask to be registered.";
-
-    }else{
+//    if (!isset($_SESSION['level'])) {
+//
+//        header("refresh:4; url=../a_login.php");  // if they are only an editor, then send them elsewhere
+//        echo "<link rel='stylesheet' href='../../admin_styles.css'>";  //
+//        echo "Not logged in, please log in";
+//
+//    } elseif(isset($_SESSION['level']) && $_SESSION['level']!='SUPER'){//check logged in and admin level
+//
+//        header("refresh:4; location: a_index.php"); //if they are only editor go back to home
+//        echo "<link rel='stylesheet' type='text/css' href='../../admin_styles.css'>";
+//        echo "Admin already exists. login or ask to be registered.";
+//
+//    }else{
 
         echo "<DOCTYPE html>";
 
@@ -37,7 +37,7 @@
 
                     echo "<h2>Add Admin Form</h2>"; // Heading for the registration form
 
-                    echo "<form action='add_admin_reg.php' method='post'>"; // Form for admin registration
+                    echo "<form method='post' action='add_admin_reg.php' >"; // Form for admin registration
 
                         echo "<table>"; // Table to organize form fields
 
@@ -88,7 +88,7 @@
                                 echo "<td><label for='admin_type'>Select type of admin:</label></td>";
 
                                 echo "<td>";
-                                    echo "<select id='admin_type' name='Aadmin_type'>";
+                                    echo "<select id='admin_type' name='admin_type'>";
                                         echo "<option value='CREATOR'>Creator</option>";
                                         echo "<option value='EDITOR'>Editor</option>";
                                         echo "<option value='SUPER'>Super</option>";
@@ -112,6 +112,4 @@
 
         echo "</html>";
 
-    }
-
-?>
+    //}

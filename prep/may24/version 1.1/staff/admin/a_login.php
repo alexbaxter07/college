@@ -4,12 +4,10 @@
 
     session_start(); // start session to include session variables across pages it is used
 
-    include("a_functions.php");
-
-    if(admin_sesh_started()){
+    if ($_SESSION["admin_login"]==true) {
         header("location: a_index.php");
+        exit(); // Always exit after header redirection
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -37,18 +35,14 @@
                     </tr>
 
                     <tr>
-                        <td><label for="email">Email:</label></td>
-                        <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
-                    </tr>
-
-                    <tr>
                         <td><label for="password">Password:</label></td>
                         <td><input type="password" id="password" name="password" placeholder="Enter your password" required></td>
                     </tr>
 
                     <tr>
-                        <td><label for="cpassword">Confirm Password:</label></td>
-                        <td><input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password" required></td>
+                        <td colspan="2">
+                            <button type="submit">Login</button>
+                        </td>
                     </tr>
 
                 </table>

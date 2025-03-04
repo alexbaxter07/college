@@ -3,4 +3,3 @@
 
     session_start();
 // this will come in version 3
-?>

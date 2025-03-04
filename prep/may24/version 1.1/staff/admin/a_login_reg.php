@@ -1,15 +1,19 @@
 <?php
+
+session_start();
 // page to validate the information from admin login and will grant privledges
+
+in
+clude("../../db_connect.php");
+include("a_functions.php");
+include("../../functions.php");
 
     try{ // try except to catch any errors
 
-        session_start(); //session start so that the page can connect to session data
-
-        include("../../db_connect.php");
-        include("a_functions.php");
-        include("../../functions.php");
+        //session start so that the page can connect to session data
 
         $username = $_POST['uname'];
+        $pass = $_POST['password'];
 
         $sql = "SELECT password, privilege FROM admin_user WHERE username = ?";
         $stmt = $conn->prepare($sql);
@@ -19,7 +23,7 @@
 
         if($result){ // if user existes with given details
 
-            if(password_verify($_POST['password'], $result['password'])){ // if password match database
+            if(password_verify($pass, $result['password'])){ // if password match database
 
                 //creation of session variables
                 $_SESSION["admin_login"] = true;
@@ -33,7 +37,7 @@
 
             }else{
 
-                session_destroy(); // if failed kills session
+              //  session_destroy(); // if failed kills session
 
                 header("refresh:4; location: a_login.php"); //send back to login
 
@@ -58,5 +62,3 @@
         echo $e; // ouputs error message
 
     }
-
-?>
