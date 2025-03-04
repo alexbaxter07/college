@@ -1,16 +1,18 @@
 <?php
 
     $servername = "localhost";
-    $username = "zoo";
-    $password = "Password";
-    $dname = "zoo";
+    $dbusername = "zoo";
+    $dbpassword = "Password";
+    $dbname = "zoo";
 
-    //trys connecting to database if it cant then gives an error message for robustness
-    try {
-        $conn = new PDO("mysql:host=$servername;port =3306;dbname=$dname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo "conection failed" . $e->getMessage();
+    try {  //attempt this block of code, catching an error
+        $conn = new PDO("mysql:host=$servername;port=3306;dbname=$dbname", $dbusername, $dbpassword);  // creates a PDO connection to the database
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //sets error modes
+        return $conn;
+    } catch(PDOException $e) {  //catch statement if it fails
+        error_log("Database error in super_checker: " . $e->getMessage());
+    // Throw the exception
+        throw $e; // Re-throw the exception  // outputs the error
     }
 
 ?>

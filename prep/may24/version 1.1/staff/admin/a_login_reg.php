@@ -5,6 +5,7 @@
 
         session_start(); //session start so that the page can connect to session data
 
+        include("../../db_connect.php");
         include("a_functions.php");
         include("../../functions.php");
 

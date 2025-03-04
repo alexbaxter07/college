@@ -18,7 +18,7 @@
         }
     }
 
-    function auditor ($who, $taskcode, $task){
+    function auditor($conn, $who, $taskcode, $task){
 
         try{
 
