@@ -3,8 +3,7 @@
 session_start();
 // page to validate the information from admin login and will grant privledges
 
-in
-clude("../../db_connect.php");
+include("../../db_connect.php");
 include("a_functions.php");
 include("../../functions.php");
 
