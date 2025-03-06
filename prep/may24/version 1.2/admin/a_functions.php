@@ -1,21 +1,35 @@
 <?php
-// page used for differant admin functions to be used within the admin system
 
-function admin_sesh_started($conn){
-    if(isset($_SESSION['admin_login'])){
-        return true;
+function super_checker($conn){
+    try {
+        $sql = "SELECT priv FROM admin_user WHERE priv = 'SUPER'"; //set up the sql statement
+        $stmt = $conn->prepare($sql); //prepares
+        //$stmt->bindParam(1, "SUPER");
+        $stmt->execute(); //run the sql code
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);  //brings back results
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    catch (PDOException $e) { //catch error
+        // Log the error (crucial!)
+        error_log("Database error in super_checker: " . $e->getMessage());
+        // Throw the exception
+        throw $e; // Re-throw the exception
     }
 }
 
 function reg_admin($conn, $post) {
 
     // Validate the post data
-    if (!isset($post['uname'], $post['password'], $post['fname'], $post['sname'], $post['email'], $post['priviledge'])) {
+    if (!isset($post['username'], $post['password'], $post['fname'], $post['sname'], $post['email'], $post['priv'])) {
         throw new Exception("Missing required fields.");
-    } else{
+    } elseif(valid_email($post['email'])){
         try {
             // Prepare and execute the SQL query
-            $sql = "INSERT INTO admin_user (username, password, email, first_name, last_name, signup_date, priviledge) VALUES (?, ?, ?, ?, ?, ?, ?)";  //prepare the sql to be sent
+            $sql = "INSERT INTO admin_user (username, password, email, first_name, last_name, signup_date, priv) VALUES (?, ?, ?, ?, ?, ?, ?)";  //prepare the sql to be sent
             $stmt = $conn->prepare($sql); //prepare to sql
 
             $stmt->bindParam(1, $post['username']);  //bind parameters for security
@@ -30,6 +44,7 @@ function reg_admin($conn, $post) {
             $stmt->bindParam(7, $post['priv']);
 
             $stmt->execute();  //run the query to insert
+            $conn = null;  // closes the connection so cant be abused.
             return true; // Registration successful
         }  catch (PDOException $e) {
             // Handle database errors
@@ -41,26 +56,9 @@ function reg_admin($conn, $post) {
             throw new Exception("Registration error: " . $e->getMessage()); //Throw exception for calling script to handle.
         }
     }
-}
-
-function super_checker($conn){
-    try {
-        $sql = "SELECT priviledge FROM admin_user WHERE priviledge = 'SUPER'"; //set up the sql statement
-        $stmt = $conn->prepare($sql); //prepares
-        $stmt->execute(); //run the sql code
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);  //brings back results
-        $conn = null;
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    catch (PDOException $e) { //catch error
-        // Log the error (crucial!)
-        error_log("Database error in super_checker: " . $e->getMessage());
-        // Throw the exception
-        throw $e; // Re-throw the exception
+    else {
+        error_log("Registration email wrong format"); //Log the error
+        throw new Exception("Registration email wrong format"); //Throw exception for calling script to handle.
     }
 }
 
@@ -93,17 +91,12 @@ function admin_error(&$session){  // uses passes by reference no by value, so yo
 }
 
 function add_ticket($conn,$post){
-
     // Validate the post data
     if (!isset($post['type'], $post['price'], $post['no_of_tickets'])) {
-
         throw new Exception("Missing required fields.");
-
     }
     else {
-
         try {
-
             // Prepare and execute the SQL query
             $sql = "INSERT INTO tickets (type, price, no_of_tickets) VALUES (?, ?, ?)";  //prepare the sql to be sent
             $stmt = $conn->prepare($sql); //prepare to sql
@@ -115,19 +108,14 @@ function add_ticket($conn,$post){
             $stmt->execute();  //run the query to insert
             $conn = null;  // closes the connection so cant be abused.
             return true; // Registration successful
-
         } catch (PDOException $e) {
-
             // Handle database errors
             error_log("Add Ticket Database error: " . $e->getMessage()); // Log the error
             throw new Exception("Add Ticket Database error" . $e); //Throw exception for calling script to handle.
-
         } catch (Exception $e) {
-
             // Handle validation or other errors
             error_log("Add Ticket Registration error: " . $e->getMessage()); //Log the error
             throw new Exception("Add Ticket Registration error: " . $e->getMessage()); //Throw exception for calling script to handle.
-
         }
     }
 
@@ -135,19 +123,14 @@ function add_ticket($conn,$post){
 }
 
 function add_hotelroom($conn,$post){
-
     // Validate the post data
     if (!isset($post['type'], $post['occupancy'], $post['no_of_rooms'], $post['price'])) {
-
         throw new Exception("Missing required fields.");
-
     }
     else {
-
         try {
-
             // Prepare and execute the SQL query
-            $sql = "INSERT INTO hotel_room (type, occupancy, no_of_rooms, price) VALUES (?, ?, ?, ?)";  //prepare the sql to be sent
+            $sql = "INSERT INTO hotel_rooms (type, occupancy, no_of_rooms, price) VALUES (?, ?, ?, ?)";  //prepare the sql to be sent
             $stmt = $conn->prepare($sql); //prepare to sql
 
             $stmt->bindParam(1, $post['type']);  //bind parameters for security
@@ -158,36 +141,26 @@ function add_hotelroom($conn,$post){
             $stmt->execute();  //run the query to insert
             $conn = null;  // closes the connection so cant be abused.
             return true; // Registration successful
-
         } catch (PDOException $e) {
-
             // Handle database errors
             error_log("Add Room Database error: " . $e->getMessage()); // Log the error
             throw new Exception("Add Ticket Database error" . $e); //Throw exception for calling script to handle.
-
         } catch (Exception $e) {
-
             // Handle validation or other errors
             error_log("Add Room Registration error: " . $e->getMessage()); //Log the error
             throw new Exception("Add Ticket Registration error: " . $e->getMessage()); //Throw exception for calling script to handle.
-
         }
     }
 
 }
 
 function add_usertype($conn,$post){
-
     // Validate the post data
     if (!isset($post['type'], $post['discount'])) {
-
         throw new Exception("Missing required fields.");
-
     }
     else {
-
         try {
-
             // Prepare and execute the SQL query
             $sql = "INSERT INTO user_type (type, discount) VALUES (?, ?)";  //prepare the sql to be sent
             $stmt = $conn->prepare($sql); //prepare to sql
@@ -198,19 +171,14 @@ function add_usertype($conn,$post){
             $stmt->execute();  //run the query to insert
             $conn = null;  // closes the connection so cant be abused.
             return true; // Registration successful
-
         } catch (PDOException $e) {
-
             // Handle database errors
             error_log("Add User Type Database error: " . $e->getMessage()); // Log the error
             throw new Exception("Add User Type Database error" . $e); //Throw exception for calling script to handle.
-
         } catch (Exception $e) {
-
             // Handle validation or other errors
             error_log("Add User Type Registration error: " . $e->getMessage()); //Log the error
             throw new Exception("Add User Type Registration error: " . $e->getMessage()); //Throw exception for calling script to handle.
-
         }
     }
 }
