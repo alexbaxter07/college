@@ -31,7 +31,7 @@
 
                 echo"<a href='admin_pages/update/ud_ticket.php'<li>Update Ticket</li></a>";
                 echo"<a href='admin_pages/update/ud_hotelroom.php'<li>Update Hotel Room</li></a>";
-                echo"<a href='admin_pages/update/up_usertype.php'<li>Update UserType</li></a>";
+                echo"<a href='admin_pages/update/ud_usertype.php'<li>Update UserType</li></a>";
 
             }
 
